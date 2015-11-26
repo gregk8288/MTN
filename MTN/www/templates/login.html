@@ -1,8 +1,9 @@
 <ion-view>
-  <ion-content class="bg bg-darkblue" scroll="true">
+  <ion-content class="bg bg-darkblue" scroll="false">
     <div class="container form-container padding-20">
-      <img src="../img/add_mail.png" alt="login-logo" class="login-logo"/>
-
+      <div class="text-center">
+        <img src="../img/add_mail.png" alt="login-logo" class="login-logo"/>
+      </div>
       <div class="row text-center">
         <p class="login-message text-center"> Please enter your email address and we'll find events that you have been invited
           to.</p>
@@ -10,8 +11,8 @@
       <form class="list">
         <ion-list>
           <label class="item item-input item-stacked-label input-field">
-            <span class="input-label input-label-text">EMAIL ADDRESS</span>
-            <input type="text" placeholder="example@domain.com" />
+            <span class="input-label input-label-text text-left">EMAIL ADDRESS</span>
+            <input type="email" placeholder="example@domain.com" ng-model="user.email"/>
           </label>
         </ion-list>
         <button class="button button-energized button-outline button-block " ng-click="goTosignin();">CONTINUE</button>

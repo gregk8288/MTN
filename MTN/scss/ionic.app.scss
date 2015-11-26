@@ -39,15 +39,26 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   bottom: -260px;
 
   .login-logo{
-    position: absolute;
-    margin-left: -60px;
-    left: 54%;
-    top: -50px;
+    position: relative;
+    top: -100px;
     max-width: 100px;
-    padding: 5px;
   }
   .login-message{
     font-weight: bold;
+    margin-top:-65px;
+  }
+  .profile-text{
+    position: absolute;
+    width: 100%;
+    top: -15px;
+    h2{
+      top: -15px;
+      z-index: 500;
+      color:white;
+      line-height: 1;
+      margin-left: -38px;
+    }
+
   }
 }
 
@@ -68,15 +79,10 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   margin-top:40px;
 }
 
-
-
-
 ///// SIGN IN PAGE /////
 .item >.margin-top10{
  margin-top: 10px;
 }
-
-
 
 ///// GENERAL /////
 
@@ -89,6 +95,16 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   border-left: 0px;
   border-right: 0;
 }
-.margin-top40{
-  margin-top:40px;
+.margin-top20{
+  margin-top:20px;
+}
+
+////// PROFILE /////
+.test >label{
+  display:inline-block;
+  width: 50%;
+}
+
+.profile-form{
+  margin-top: -20%;
 }

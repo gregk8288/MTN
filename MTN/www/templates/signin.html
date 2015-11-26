@@ -1,26 +1,27 @@
 <ion-view>
   <ion-content class="bg bg-darkblue" scroll="false">
     <div class="container form-container padding-20">
-      <img src="../img/add_user.png" alt="login-logo" class="login-logo"/>
-
+      <div class="text-center">
+        <img src="../img/add_user.png" alt="login-logo" class="login-logo"/>
+      </div>
       <div class="row text-center">
         <p class="login-message text-center">Sign in with one of your social media profiles and help us complete your
           profile.</p>
       </div>
-      <div class="list margin-top40">
+      <div class="list margin-top20">
         <a class="item item-avatar input-field" href="#">
-          <img src="../img/facebook_icon.png">
+          <img src="../img/facebook_icon.png" />
 
           <h2 class="margin-top10">Facebook</h2>
         </a>
 
-        <a class="item item-avatar list-no-borderLR" href="#">
+        <a class="item item-avatar list-no-borderLR" href="#" />
           <img src="../img/linkedin-icon.png">
 
           <h2 class="margin-top10">Linked In</h2>
         </a>
 
-        <a class="item item-avatar list-no-borderLR" href="#">
+        <a class="item item-avatar list-no-borderLR" href="#" />
           <img src="../img/twitter-icon.png">
 
           <h2 class="margin-top10">Twitter</h2>
@@ -31,6 +32,6 @@
     </div>
   </ion-content>
   <ion-footer-bar align-title="center">
-    <button class="button button-energized button-clear button-block">SKIP</button>
+    <button class="button button-energized button-clear button-block" ng-click="goToProfile();">SKIP</button>
   </ion-footer-bar>
 </ion-view>

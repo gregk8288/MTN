@@ -1,33 +1,35 @@
 <ion-view title="Page">
-    <ion-content padding="'true'" class="has-header">
-        <div class="spacer" style="width: 300px; height: 75px;"></div>
-        <div>
-            <p>
-                Sign in with one of your social media profiles and help us complete your profile.
-            </p>
+  <ion-content class="bg bg-darkblue" scroll="false">
+    <div class="container form-container padding-20">
+      <div class="text-center">
+        <img src="../img/oval.png" alt="login-logo" class="login-logo"/>
+      </div>
+      <div class="profile-text text-center">
+        <h2>DB</h2>
+      </div>
+      <form class="list profile-form">
+        <div class="test">
+          <label class="item item-input item-stacked-label input-field">
+            <span class="input-label input-label-text">FIRST NAME</span>
+            <input type="text" placeholder="Enter name here" ng-model="user.firstname" />
+          </label>
+          <label class="item item-input item-stacked-label input-field">
+            <span class="input-label input-label-text">LAST NAME</span>
+            <input type="text" placeholder="Enter last name here" ng-model="user.lastname" />
+          </label>
         </div>
-        <div class="spacer" style="width: 300px; height: 33px;"></div>
-        <form class="list"></form>
-        <ion-list>
-            <ion-item menu-close="" class="item-thumbnail-left">
-                <img>
-                <h2>Title</h2>
-                <p>Item</p>
-            </ion-item>
-        </ion-list>
-        <ion-list>
-            <ion-item menu-close="" class="item-thumbnail-left">
-                <img>
-                <h2>Title</h2>
-                <p>Item</p>
-            </ion-item>
-            <ion-item menu-close="" class="item-thumbnail-left">
-                <img>
-                <h2>Title</h2>
-                <p>Item</p>
-            </ion-item>
-        </ion-list>
-        <div class="spacer" style="height: 100px;"></div>
-        <button class="button button-energized button-clear button-block ">skip</button>
-    </ion-content>
+        <div>
+          <label class="item item-input item-stacked-label input-field">
+            <span class="input-label input-label-text">EMAIL ADDRESS</span>
+            <input type="email" placeholder="Enter email"  ng-model="user.email" />
+          </label>
+          <label class="item item-input item-stacked-label input-field">
+            <span class="input-label input-label-text">JOB TITLE</span>
+            <input type="text" placeholder="Enter job title"  ng-model="user.job" />
+          </label>
+        </div>
+        <button class="button button-energized button-outline button-block " ng-click="goTosignin();">CONTINUE</button>
+      </form>
+    </div>
+  </ion-content>
 </ion-view>

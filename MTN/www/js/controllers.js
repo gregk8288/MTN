@@ -12,8 +12,10 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('signinCtrl', function($scope) {
-
+.controller('signinCtrl', function($scope, $state) {
+  $scope.goToProfile= function () {
+    $state.go('profile');
+  }
 })
 
 .controller('mTNAcadamyCtrl', function($scope) {

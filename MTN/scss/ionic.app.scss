@@ -21,6 +21,9 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+
+$bgcolor: #2C3A51;
+
 ////// LOGIN SCREEN //////
 .bg {
   background-repeat: no-repeat;
@@ -98,6 +101,12 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .margin-top20{
   margin-top:20px;
 }
+.bar.bar-header.barheader{
+  background-color: $bgcolor;
+  border-bottom: none;
+  color:white;
+}
+
 
 ////// PROFILE /////
 .test >label{
@@ -107,4 +116,8 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 .profile-form{
   margin-top: -20%;
+}
+
+.bar-light .button.button-clear{
+  color:white;
 }

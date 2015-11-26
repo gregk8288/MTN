@@ -16,17 +16,18 @@ angular.module('app.routes', [])
       controller: 'loginCtrl'
     })
 
-    .state('page', {
-      url: '/social',
-      templateUrl: 'templates/page.html',
-      controller: 'pageCtrl'
-    })
-
     .state('signin', {
       url: '/signin',
       templateUrl: 'templates/signin.html',
-      controller: 'signupCtrl'
+      controller: 'signinCtrl'
     })
+
+    .state('profile', {
+      url: '/profile',
+      templateUrl: 'templates/profile.html',
+      controller: 'profileCtrl'
+    })
+
 
     .state('mTNAcadamy', {
       url: '/home',

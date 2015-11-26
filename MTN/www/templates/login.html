@@ -1,27 +1,24 @@
 <ion-view>
-  <ion-content class="bg bg-darkblue" scroll="false">
-
+  <ion-content class="bg bg-darkblue" scroll="true">
     <div class="container form-container padding-20">
-      <img src="../img/add_mail.png" alt="login-logo" class="login-logo">
+      <img src="../img/add_mail.png" alt="login-logo" class="login-logo"/>
 
-      <div>
-        <p>
-          Please enter your email address and we ll find events that you have been invited too.
-        </p>
+      <div class="row text-center">
+        <p class="login-message text-center"> Please enter your email address and we'll find events that you have been invited
+          to.</p>
       </div>
-      <div class="spacer" style="width: 300px; height: 54px;"></div>
       <form class="list">
         <ion-list>
-          <label class="item item-input">
-            <span class="input-label">Email</span>
-            <input type="email" placeholder="">
+          <label class="item item-input item-stacked-label input-field">
+            <span class="input-label input-label-text">EMAIL ADDRESS</span>
+            <input type="text" placeholder="example@domain.com" />
           </label>
         </ion-list>
-        <div class="spacer" style="height: 40px;"></div>
         <button class="button button-energized button-outline button-block ">CONTINUE</button>
       </form>
-      <div class="spacer" style="width: 300px; height: 151px;"></div>
-      <button class="button button-energized button-clear button-block ">skip</button>
     </div>
   </ion-content>
+  <ion-footer-bar align-title="center">
+    <button class="button button-energized button-clear button-block ">SKIP</button>
+  </ion-footer-bar>
 </ion-view>

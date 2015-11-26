@@ -41,10 +41,13 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   .login-logo{
     position: absolute;
     margin-left: -60px;
-    left: 55%;
+    left: 54%;
     top: -50px;
     max-width: 100px;
     padding: 5px;
+  }
+  .login-message{
+    font-weight: bold;
   }
 }
 
@@ -52,5 +55,25 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   padding: 20px;
 }
 
+.input-label-text{
+  font-size: 11px;
+  color:lightgrey;
+}
+
+.button.button-energized.button-clear{
+  margin-top:-10px;
+}
+
+.button.button-energized.button-outline{
+  margin-top:40px;
+}
+
+///// GENERAL /////
+
+.input-field{
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0;
+}
 
 

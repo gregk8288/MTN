@@ -22,9 +22,9 @@ angular.module('app.routes', [])
       controller: 'pageCtrl'
     })
 
-    .state('signup', {
-      url: '/page3',
-      templateUrl: 'templates/signup.html',
+    .state('signin', {
+      url: '/signin',
+      templateUrl: 'templates/signin.html',
       controller: 'signupCtrl'
     })
 

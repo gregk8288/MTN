@@ -2,8 +2,8 @@ angular.module('app.controllers', [])
 
 .controller('loginCtrl', function($scope, $state) {
 
-  $scope.goTosignup = function () {
-    $state.go('signup');
+  $scope.goTosignin = function () {
+    $state.go('signin');
   }
 
 })

@@ -9088,3 +9088,132 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+.bg {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: white; }
+  .bg.bg-darkblue {
+    background-image: url("../img/bg.png"); }
+
+.form-container {
+  margin-top: -30%;
+  position: relative;
+  padding-top: 50px !important;
+  background-color: white;
+  bottom: -260px; }
+  .form-container .login-logo {
+    position: relative;
+    top: -100px;
+    max-width: 100px; }
+  .form-container .login-message {
+    font-weight: bold;
+    margin-top: -65px; }
+  .form-container .profile-text {
+    position: absolute;
+    width: 100%;
+    top: -15px; }
+    .form-container .profile-text h2 {
+      top: -15px;
+      z-index: 500;
+      color: white;
+      line-height: 1;
+      margin-left: -38px; }
+
+.padding-20 {
+  padding: 20px; }
+
+.input-label-text {
+  font-size: 11px;
+  color: lightgrey; }
+
+.button.button-energized.button-clear {
+  margin-top: -10px; }
+
+.button.button-energized.button-outline {
+  margin-top: 40px; }
+
+.item > .margin-top10 {
+  margin-top: 10px; }
+
+.input-field {
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0; }
+
+.list-no-borderLR {
+  border-left: 0px;
+  border-right: 0; }
+
+.margin-top20 {
+  margin-top: 20px; }
+
+.bar.bar-header.barheader {
+  background-color: #2C3A51;
+  border-bottom: none;
+  color: white; }
+
+.no-padding {
+  padding: 0px !important; }
+
+.test > label {
+  display: inline-block;
+  width: 50%; }
+
+.profile-form {
+  margin-top: -20%; }
+
+.bar-light .button.button-clear {
+  color: white; }
+
+.tabbed-slidebox .tsb-icons a.active {
+  border: 1px solid #FFCC00;
+  color: #FFCC00;
+  box-shadow: none;
+  background: transparent;
+  font-weight: bold; }
+
+.tabbed-slidebox .tsb-icons a {
+  color: white;
+  font-weight: bold;
+  background: transparent; }
+
+.tabbed-slidebox .tsb-icons {
+  margin-top: -150px; }
+
+.list > .item > .training-title {
+  color: #FABA26;
+  font-weight: bold; }
+
+.mtnAcademy-list {
+  margin-top: 10px; }
+
+.bar .title.title-left, .bar.bar-light .title {
+  text-align: center;
+  color: white;
+  font-weight: bold; }
+
+.bar.bar-header > .title-left {
+  left: 0px !important; }
+
+.button-clear.back-image {
+  margin-left: 0px; }
+
+.bar.bar-header > .avatar {
+  margin-left: 17%;
+  color: white; }
+
+.avatar-text {
+  color: white;
+  position: absolute;
+  z-index: 900;
+  text-transform: uppercase;
+  line-height: 3;
+  margin-left: -27px;
+  margin-top: -4px;
+  font-weight: bold; }
+
+.button {
+  line-height: 37px !important;
+  height: 37px !important;
+  min-height: 37px !important; }

@@ -35,6 +35,12 @@ angular.module('app.routes', [])
       controller: 'mTNAcadamyCtrl'
     })
 
+    .state('training', {
+      url: '/training',
+      templateUrl: 'templates/training.html',
+      controller: 'trainingCtrl'
+    })
+
 
     ;
 

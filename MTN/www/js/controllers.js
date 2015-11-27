@@ -8,7 +8,11 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('profileCtrl', function($scope) {
+.controller('profileCtrl', function($scope, $state) {
+
+  $scope.goToMtnAcademy= function () {
+    $state.go('mTNAcadamy');
+  }
 
 })
 

@@ -23,6 +23,8 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 
 $bgcolor: #2C3A51;
+$yellowbg: #FFCC00;
+$trainingOrange: #FABA26;
 
 ////// LOGIN SCREEN //////
 .bg {
@@ -106,6 +108,9 @@ $bgcolor: #2C3A51;
   border-bottom: none;
   color:white;
 }
+.no-padding{
+  padding:0px !important;
+}
 
 
 ////// PROFILE /////
@@ -121,3 +126,60 @@ $bgcolor: #2C3A51;
 .bar-light .button.button-clear{
   color:white;
 }
+
+/////// MTN ACADEMY PAGE ///////   TODO: THIS NEED TO BE REFACTORED
+
+.tabbed-slidebox .tsb-icons a.active{
+  border:1px solid $yellowbg;
+  color:$yellowbg;
+  box-shadow: none;
+  background: transparent;
+  font-weight: bold;
+}
+
+.tabbed-slidebox .tsb-icons a{
+  color:white;
+  font-weight: bold;
+  background: transparent;
+}
+
+.tabbed-slidebox .tsb-icons{
+
+  margin-top:-150px;
+}
+
+.list>.item>.training-title{
+  color:$trainingOrange;
+  font-weight: bold;
+}
+.mtnAcademy-list{
+  margin-top:10px;
+}
+
+.bar .title.title-left, .bar.bar-light .title {
+  text-align: center;
+  color:white;
+  font-weight: bold;
+}
+.bar.bar-header>.title-left{
+  left:0px !important;
+}
+.button-clear.back-image
+{
+  margin-left:0px;
+}
+.bar.bar-header>.avatar{
+  margin-left: 17%;
+  color:white
+}
+.avatar-text{
+  color:white;
+  position: absolute;
+  z-index: 900;
+  text-transform: uppercase;
+  line-height:3;
+  margin-left: -27px;
+  margin-top: -4px;
+  font-weight: bold;
+}
+

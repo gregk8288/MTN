@@ -1,3 +1,63 @@
-<ion-view title="MTN Acadamy">
-    <ion-content padding="'true'" class="has-header"></ion-content>
+<ion-view view-title="MTN Acadamy">
+  <ion-nav-bar class="bar bar-header bar-light barheader">
+    <ion-nav-back-button style="display:block;" class="button-clear back-image">
+      <i class="ion-arrow-left-c"></i> Back
+    </ion-nav-back-button>
+    <span class="avatar"><img src="../img/oval.png" alt="oval" style="position: relative; z-index: 500;" width="35" height="35" /></span>
+    <span class="avatar-text">Dj</span>
+  </ion-nav-bar>
+  <ion-content class="bg bg-darkblue" scroll="false">
+    <div class="container-fluid form-container">
+      <tab-slide-box>
+        <div class="tsb-icons padding-left padding-right">
+          <div class="tsb-ic-wrp">
+            <div class="button-bar">
+              <a href="javascript:;" class="button">MY TRAINING</a>
+              <a href="javascript:;" class="button">ALL TRAINING</a>
+            </div>
+          </div>
+        </div>
+        <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+          <ion-slide class="tabbed-slider-content" on-swipe-left="getContent();">
+            <div class="list mtnAcademy-list">
+              <a href="#" class="item">
+                <p class="training-title">Excel Training</p>
+                <i class="ion-ios-clock-outline"> 10:00</i>
+                <i class="ion-calendar"> 27-30 September</i>
+              </a>
+              <a href="" class="item">
+                <p class="training-title">Java Training</p>
+                <i class="ion-ios-clock-outline"> 10:00</i>
+                <i class="ion-calendar"> 27-30 September</i>
+              </a>
+              <a href="" class="item">
+                <p class="training-title">GIBS Mini MBA</p>
+                <i class="ion-ios-clock-outline"> 10:00</i>
+                <i class="ion-calendar"> 27-30 September</i>
+              </a>
+            </div>
+          </ion-slide>
+          <ion-slide class="tabbed-slider-content">
+            <div class="list mtnAcademy-list">
+              <a href="#" class="item">
+                <p class="training-title">Angularjs Training</p>
+                <i class="ion-ios-clock-outline"> 10:00</i>
+                <i class="ion-calendar"> 27-30 September</i>
+              </a>
+              <a href="" class="item">
+                <p class="training-title">Ruby Training</p>
+                <i class="ion-ios-clock-outline"> 10:00</i>
+                <i class="ion-calendar"> 27-30 September</i>
+              </a>
+              <a href="" class="item">
+                <p class="training-title">Bootstrap MBA</p>
+                <i class="ion-ios-clock-outline"> 10:00</i>
+                <i class="ion-calendar"> 27-30 September</i>
+              </a>
+            </div>
+          </ion-slide>
+        </ion-slide-box>
+      </tab-slide-box>
+    </div>
+  </ion-content>
 </ion-view>

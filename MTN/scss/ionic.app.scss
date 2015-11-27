@@ -172,6 +172,18 @@ $trainingOrange: #FABA26;
   margin-left: 17%;
   color:white
 }
+.bar.bar-header>.avatar img{
+  position: relative;
+  z-index: 500;
+}
+
+.bar.bar-header>.dropdown i{
+  color:white;
+  position:relative;
+  z-index: 900;
+  top: 7px;
+  margin-left: 5px;
+}
 .avatar-text{
   color:white;
   position: absolute;

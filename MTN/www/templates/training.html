@@ -10,7 +10,7 @@
     </a>
   </ion-nav-bar>
   <ion-content class="bg bg-darkblue" scroll="false">
-    <div class="container-fluid form-container">
+    <div class="container-fluid form-container" style="height: 100%;">
       <tab-slide-box>
         <div class="tsb-icons padding-left padding-right">
           <div class="tsb-ic-wrp">
@@ -21,9 +21,9 @@
           </div>
         </div>
         <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
-          <ion-slide class="tabbed-slider-content" on-swipe-left="getContent();">
-            <div class="list mtnAcademy-list main-content" style="height: 100%;">
-              <div class="list list-container" style="height:calc(100% - 125px); overflow-x:hidden; overflow-y: auto;">
+          <ion-slide class="tabbed-slider-content" on-swipe-left="getContent();" >
+            <div class="list mtnAcademy-list main-content" style="height:100%">
+              <div class="list list-container" style="height:calc(100% - 125px); overflow-x:hidden; overflow-y:auto;">
                 <a href="" class="item item-avatar chat-message" ng-repeat="chat in chats">
                   <img src="https://media.licdn.com/mpr/mpr/shrink_100_100/AAEAAQAAAAAAAAMQAAAAJDk4MWZkMzFlLWQ1ZTMtNDc1Ny04NmE2LTMwODA2NDM2ZDNiZg.png" alt="Tangent" />
                   <p class="training-title">{{chat.user}}</p>
@@ -36,7 +36,7 @@
                     <label class="item-input-wrapper">
                       <input type="text" placeholder="Message" ng-model="chat.message">
                     </label>
-                    <button class="button send-btn" ng-click="sendChat(chat)">Send</button>
+                    <a class="button send-btn" ng-click="sendChat(chat)">Send</a>
                   </div>
                 </div>
               </form>

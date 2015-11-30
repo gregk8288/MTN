@@ -201,3 +201,21 @@ $trainingOrange: #FABA26;
 }
 
 //// TRAINING /////
+
+a.item.chat-message{
+  border:0px;
+}
+.input-inset{
+  background-color:$bgcolor;
+}
+.send-btn{
+  background-color:$bgcolor;
+  color:white;
+  border:none;
+  font-weight: bold;
+}
+.send-btn:hover{
+  background-color:$bgcolor;
+  color:white;
+  font-weight: bold;
+}

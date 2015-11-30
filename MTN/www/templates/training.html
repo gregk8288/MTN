@@ -3,7 +3,7 @@
     <ion-nav-back-button style="display:block;" class="button-clear back-image">
       <i class="ion-arrow-left-c"></i> Back
     </ion-nav-back-button>
-    <span class="avatar"><img src="../img/oval.png" alt="oval" width="35" height="35" /></span>
+    <span class="avatar"><img src="https://s3.amazonaws.com/uploads.hipchat.com/95165/1164261/NMEKiMooQzN5hZ9/Oval%2083%402x.png" alt="oval" width="35" height="35" /></span>
     <a href="#" class="dropdown" ng-click="openPopover($event)">
       <span class="avatar-text">Dj</span>
       <i class="ion-ios-arrow-down"></i>
@@ -22,22 +22,24 @@
         </div>
         <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
           <ion-slide class="tabbed-slider-content" on-swipe-left="getContent();">
-            <div class="list mtnAcademy-list">
-              <a href="#" class="item">
-                <p class="training-title">Excel Training</p>
-                <i class="ion-ios-clock-outline"> 10:00</i>
-                <i class="ion-calendar"> 27-30 September</i>
-              </a>
-              <a href="" class="item">
-                <p class="training-title">Java Training</p>
-                <i class="ion-ios-clock-outline"> 10:00</i>
-                <i class="ion-calendar"> 27-30 September</i>
-              </a>
-              <a href="" class="item">
-                <p class="training-title">GIBS Mini MBA</p>
-                <i class="ion-ios-clock-outline"> 10:00</i>
-                <i class="ion-calendar"> 27-30 September</i>
-              </a>
+            <div class="list mtnAcademy-list main-content" style="height: 100%;">
+              <div class="list list-container" style="height:calc(100% - 125px); overflow-x:hidden; overflow-y: auto;">
+                <a href="" class="item item-avatar chat-message" ng-repeat="chat in chats">
+                  <img src="https://media.licdn.com/mpr/mpr/shrink_100_100/AAEAAQAAAAAAAAMQAAAAJDk4MWZkMzFlLWQ1ZTMtNDc1Ny04NmE2LTMwODA2NDM2ZDNiZg.png" alt="Tangent" />
+                  <p class="training-title">{{chat.user}}</p>
+                  <p>{{chat.message}}</p>
+                </a>
+              </div>
+              <form action="">
+                <div class="list">
+                  <div class="item item-input-inset input-inset">
+                    <label class="item-input-wrapper">
+                      <input type="text" placeholder="Message" ng-model="chat.message">
+                    </label>
+                    <button class="button send-btn" ng-click="sendChat(chat)">Send</button>
+                  </div>
+                </div>
+              </form>
             </div>
           </ion-slide>
           <ion-slide class="tabbed-slider-content">

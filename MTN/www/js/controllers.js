@@ -1,4 +1,4 @@
-angular.module('app.controllers', [])
+angular.module('app.controllers', ['firebase'])
 
 .controller('loginCtrl', function($scope, $state) {
 
@@ -44,7 +44,7 @@ angular.module('app.controllers', [])
 
 
 })
-  .controller('trainingCtrl', function($scope, $ionicPopover){
+  .controller('trainingCtrl', function($scope, $ionicPopover, $firebaseArray){
     // .fromTemplateUrl() method
     $ionicPopover.fromTemplateUrl('my-popover.html', {
       scope: $scope
@@ -62,5 +62,25 @@ angular.module('app.controllers', [])
     $scope.$on('$destroy', function() {
       $scope.popover.remove();
     });
+
+
+
+    /////chat part //////
+
+    var ref = new Firebase('https://hel.firebaseio.com/');
+    var sync = $firebaseArray(ref);
+    $scope.chats = sync;
+
+    $scope.sendChat = function(chat){
+      $scope.chats.$add({
+        user:"Tangent Solutions",
+        message: chat.message
+      });
+      chat.message = "";
+    }
+
+
+
+
 
   })

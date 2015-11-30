@@ -24,14 +24,14 @@ angular.module('app.controllers', [])
 
 .controller('mTNAcadamyCtrl', function($scope, $ionicPopover) {
 
-  // .fromTemplateUrl() method
-  $ionicPopover.fromTemplateUrl('my-popover.html', {
+  //// Menu Popover
+  $ionicPopover.fromTemplateUrl('my-menu.html', {
     scope: $scope
   }).then(function(popover) {
     $scope.popover = popover;
   });
 
-  $scope.openPopover = function($event) {
+  $scope.openPopover= function($event) {
     $scope.popover.show($event);
   };
   $scope.closePopover = function() {
@@ -41,6 +41,7 @@ angular.module('app.controllers', [])
   $scope.$on('$destroy', function() {
     $scope.popover.remove();
   });
+
 
 })
   .controller('trainingCtrl', function($scope, $ionicPopover){
@@ -61,4 +62,5 @@ angular.module('app.controllers', [])
     $scope.$on('$destroy', function() {
       $scope.popover.remove();
     });
+
   })

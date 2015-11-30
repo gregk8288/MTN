@@ -4,10 +4,11 @@
       <i class="ion-arrow-left-c"></i> Back
     </ion-nav-back-button>
     <span class="avatar"><img src="../img/oval.png" alt="oval" width="35" height="35" /></span>
-    <a href="#" class="dropdown" ng-click="openPopover($event)">
+    <a href="#" class="dropdown">
       <span class="avatar-text">Dj</span>
       <i class="ion-ios-arrow-down"></i>
     </a>
+    <a href="#" class="button button-icon icon ion-navicon pull-right" style="color: white; z-index: 900;" ng-click="openPopover($event)"></a>
   </ion-nav-bar>
   <ion-content class="bg bg-darkblue" scroll="false">
     <div class="container-fluid form-container">
@@ -63,24 +64,12 @@
       </tab-slide-box>
     </div>
   </ion-content>
-  <script id="my-popover.html" type="text/ng-template">
+  <script id="my-menu.html" type="text/ng-template">
     <ion-popover-view>
       <ion-content scroll="false">
         <div class="list">
-          <a class="item" href="#">
-            <img src="../img/status-available-icon.png" alt="available" />
-            Available
-          </a>
-          <a class="item" href="#">
-            <img src="../img/status-away.png" alt="away" />
-            Away
-          </a>
-          <a class="item" href="#">
-            <img src="../img/status_do_not_disturb.png" alt="notDisturb" />
-            Do not disturb
-          </a>
-          <a class="item" href="#/training">
-              Go to message
+          <a class="item" href="#/training" ng-click="closePopover()">
+            Training
           </a>
         </div>
       </ion-content>

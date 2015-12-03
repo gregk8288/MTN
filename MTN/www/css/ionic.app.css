@@ -9089,6 +9089,9 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+body, .ionic-body {
+  font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif; }
+
 .bg {
   background-repeat: no-repeat;
   background-size: 100%;
@@ -9180,6 +9183,11 @@ a.button {
 .no-padding {
   padding: 0px !important; }
 
+.valid {
+  float: right;
+  margin-top: -29px;
+  color: green; }
+
 .test > label {
   display: inline-block;
   width: 50%; }
@@ -9224,7 +9232,8 @@ a.button {
 .tabbed-slidebox .tsb-icons a {
   color: white;
   font-weight: bold;
-  background: transparent; }
+  background: transparent;
+  font-size: 12px; }
 
 .tabbed-slidebox .tsb-icons {
   margin-top: -171px; }
@@ -9292,3 +9301,7 @@ a.item.chat-message {
   background-color: #2C3A51;
   color: white;
   font-weight: bold; }
+
+.item.anitem {
+  font-size: 12px !important;
+  color: darkgray; }

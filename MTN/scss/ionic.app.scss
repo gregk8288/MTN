@@ -21,6 +21,10 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+//body, .ionic-body {
+//  font-family:Roboto;
+//}
+
 
 $bgcolor: #2C3A51;
 $yellowbg: #FFCC00;
@@ -34,6 +38,128 @@ $trainingOrange: #FABA26;
   &.bg-darkblue {
     background-image: url('../img/bg.png');
   }
+}
+
+.login-container{
+  margin-top: -40%;
+  position: relative;
+  padding-top: 50px !important;
+  background-color: white;
+  bottom: -260px;
+
+  .login-logo{
+    position: relative;
+    top: -100px;
+    max-width: 100px;
+  }
+  .login-message{
+    font-weight: bold;
+    margin-top:-65px;
+  }
+  .profile-text{
+    position: absolute;
+    width: 100%;
+    top: -15px;
+    h2{
+      top: -15px;
+      z-index: 500;
+      color:white;
+      line-height: 1;
+      margin-left: -38px;
+    }
+
+  }
+}
+
+
+.padding-20{
+  padding: 20px;
+}
+
+.input-label-text{
+  font-size: 11px;
+  color:lightgrey;
+}
+
+.button.button-energized.button-clear{
+  margin-top:-10px;
+}
+
+.button.button-energized.button-outline{
+  margin-top:40px;
+}
+
+///// SIGN IN PAGE /////
+.item >.margin-top10{
+ margin-top: 10px;
+}
+
+.signin-container{
+  margin-top: -52%;
+  position: relative;
+  padding-top: 50px !important;
+  background-color: white;
+  bottom: -260px;
+
+  .login-logo{
+    position: relative;
+    top: -100px;
+    max-width: 100px;
+  }
+  .login-message{
+    font-weight: bold;
+    margin-top:-65px;
+  }
+  .profile-text{
+    position: absolute;
+    width: 100%;
+    top: -15px;
+    h2{
+      top: -15px;
+      z-index: 500;
+      color:white;
+      line-height: 1;
+      margin-left: -38px;
+    }
+
+  }
+}
+
+///// GENERAL /////
+
+.input-field{
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0;
+}
+.list-no-borderLR{
+  border-left: 0px;
+  border-right: 0;
+}
+.margin-top20{
+  margin-top:20px;
+}
+.bar.bar-header.barheader{
+  background-color: $bgcolor;
+  border-bottom: none;
+  color:white;
+}
+.no-padding{
+  padding:0px !important;
+}
+
+////// PROFILE /////
+.test >label{
+  display:inline-block;
+  width: 50%;
+}
+
+.profile-form{
+  margin-top: -20%;
+}
+
+.bar-light .button.button-clear{
+  color:white;
 }
 
 .form-container{
@@ -67,65 +193,6 @@ $trainingOrange: #FABA26;
   }
 }
 
-.padding-20{
-  padding: 20px;
-}
-
-.input-label-text{
-  font-size: 11px;
-  color:lightgrey;
-}
-
-.button.button-energized.button-clear{
-  margin-top:-10px;
-}
-
-.button.button-energized.button-outline{
-  margin-top:40px;
-}
-
-///// SIGN IN PAGE /////
-.item >.margin-top10{
- margin-top: 10px;
-}
-
-///// GENERAL /////
-
-.input-field{
-  border-top: 0px;
-  border-left: 0px;
-  border-right: 0;
-}
-.list-no-borderLR{
-  border-left: 0px;
-  border-right: 0;
-}
-.margin-top20{
-  margin-top:20px;
-}
-.bar.bar-header.barheader{
-  background-color: $bgcolor;
-  border-bottom: none;
-  color:white;
-}
-.no-padding{
-  padding:0px !important;
-}
-
-
-////// PROFILE /////
-.test >label{
-  display:inline-block;
-  width: 50%;
-}
-
-.profile-form{
-  margin-top: -20%;
-}
-
-.bar-light .button.button-clear{
-  color:white;
-}
 
 /////// MTN ACADEMY PAGE ///////   TODO: THIS NEED TO BE REFACTORED
 
@@ -145,7 +212,7 @@ $trainingOrange: #FABA26;
 
 .tabbed-slidebox .tsb-icons{
 
-  margin-top:-150px;
+  margin-top:-171px;
 }
 
 .list>.item>.training-title{
@@ -169,7 +236,7 @@ $trainingOrange: #FABA26;
   margin-left:0px;
 }
 .bar.bar-header>.avatar{
-  margin-left: 17%;
+  //margin-left: 17%;
   color:white
 }
 .bar.bar-header>.avatar img{
@@ -195,9 +262,9 @@ $trainingOrange: #FABA26;
   font-weight: bold;
 }
 .button {
-    line-height: 37px !important;
-    height:37px !important;
-    min-height: 37px !important;
+    line-height: 28px !important;
+    height:28px !important;
+    min-height: 27px !important;
 }
 
 //// TRAINING /////
@@ -219,6 +286,7 @@ a.item.chat-message{
   color:white;
   font-weight: bold;
 }
+
 
 
 

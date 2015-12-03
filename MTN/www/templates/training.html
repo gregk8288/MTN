@@ -1,11 +1,8 @@
 <ion-view view-title="Training">
   <ion-nav-bar class="bar bar-header bar-light barheader">
-    <ion-nav-back-button style="display:block;" class="button-clear back-image">
-      <i class="ion-arrow-left-c"></i> Back
-    </ion-nav-back-button>
-    <span class="avatar"><img src="https://s3.amazonaws.com/uploads.hipchat.com/95165/1164261/NMEKiMooQzN5hZ9/Oval%2083%402x.png" alt="oval" width="35" height="35" /></span>
-    <a href="#" class="dropdown" ng-click="openPopover($event)">
-      <span class="avatar-text">Dj</span>
+    <span class="avatar"><img src="img/oval.png" alt="oval" width="35" height="35" /></span>
+    <a href="#" class="dropdown">
+      <span class="avatar-text" ng-click="goBackt()">Dj</span>
       <i class="ion-ios-arrow-down"></i>
     </a>
   </ion-nav-bar>
@@ -23,7 +20,7 @@
         <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
           <ion-slide class="tabbed-slider-content" on-swipe-left="getContent();" >
             <div class="list mtnAcademy-list main-content" style="height:100%">
-              <div class="list list-container" style="height:calc(100% - 125px); overflow-x:hidden; overflow-y:auto;">
+              <div class="list list-container" style="height:calc(100% - 86px); overflow-x:hidden; overflow-y:auto;">
                 <a href="" class="item item-avatar chat-message" ng-repeat="chat in chats">
                   <img src="https://media.licdn.com/mpr/mpr/shrink_100_100/AAEAAQAAAAAAAAMQAAAAJDk4MWZkMzFlLWQ1ZTMtNDc1Ny04NmE2LTMwODA2NDM2ZDNiZg.png" alt="Tangent" />
                   <p class="training-title">{{chat.user}}</p>
@@ -75,15 +72,15 @@
       <ion-content scroll="false">
         <div class="list">
           <a class="item" href="#"  ng-click="closePopover();">
-            <img src="../img/status-available-icon.png" alt="available" />
+            <img src="img/status-available-icon.png" alt="available" />
             Available
           </a>
           <a class="item" href="#"  ng-click="closePopover();">
-            <img src="../img/status-away.png" alt="away" />
+            <img src="img/status-away.png" alt="away" />
             Away
           </a>
           <a class="item" href="#"  ng-click="closePopover();">
-            <img src="../img/status_do_not_disturb.png" alt="notDisturb" />
+            <img src="img/status_do_not_disturb.png" alt="notDisturb" />
             Do not disturb
           </a>
         </div>

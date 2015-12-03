@@ -1,14 +1,10 @@
 <ion-view view-title="MTN Acadamy">
   <ion-nav-bar class="bar bar-header bar-light barheader">
-    <ion-nav-back-button style="display:block;" class="button-clear back-image">
-      <i class="ion-arrow-left-c"></i> Back
-    </ion-nav-back-button>
-    <span class="avatar"><img src="https://s3.amazonaws.com/uploads.hipchat.com/95165/1164261/NMEKiMooQzN5hZ9/Oval%2083%402x.png" alt="oval" width="35" height="35" /></span>
+    <span class="avatar" ><img src="img/oval.png" alt="oval" width="35" height="35" /></span>
     <a href="#" class="dropdown">
-      <span class="avatar-text">Dj</span>
+      <span class="avatar-text" ng-click="goBack();">Dj</span>
       <i class="ion-ios-arrow-down"></i>
     </a>
-    <a href="#" class="button button-icon icon ion-navicon pull-right" style="color: white; z-index: 900;" ng-click="openPopover($event)"></a>
   </ion-nav-bar>
   <ion-content class="bg bg-darkblue" scroll="false">
     <div class="container-fluid form-container">
@@ -24,17 +20,17 @@
         <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
           <ion-slide class="tabbed-slider-content" on-swipe-left="getContent();">
             <div class="list mtnAcademy-list">
-              <a href="#" class="item">
+              <a href="#/training" class="item">
                 <p class="training-title">Excel Training</p>
                 <i class="ion-ios-clock-outline"> 10:00</i>
                 <i class="ion-calendar"> 27-30 September</i>
               </a>
-              <a href="" class="item">
+              <a href="#/training" class="item">
                 <p class="training-title">Java Training</p>
                 <i class="ion-ios-clock-outline"> 10:00</i>
                 <i class="ion-calendar"> 27-30 September</i>
               </a>
-              <a href="" class="item">
+              <a href="#/training" class="item">
                 <p class="training-title">GIBS Mini MBA</p>
                 <i class="ion-ios-clock-outline"> 10:00</i>
                 <i class="ion-calendar"> 27-30 September</i>
@@ -43,17 +39,17 @@
           </ion-slide>
           <ion-slide class="tabbed-slider-content">
             <div class="list mtnAcademy-list">
-              <a href="#" class="item">
+              <a href="#/training" class="item">
                 <p class="training-title">Angularjs Training</p>
                 <i class="ion-ios-clock-outline"> 10:00</i>
                 <i class="ion-calendar"> 27-30 September</i>
               </a>
-              <a href="" class="item">
+              <a href="#/training" class="item">
                 <p class="training-title">Ruby Training</p>
                 <i class="ion-ios-clock-outline"> 10:00</i>
                 <i class="ion-calendar"> 27-30 September</i>
               </a>
-              <a href="" class="item">
+              <a href="#/training" class="item">
                 <p class="training-title">Bootstrap MBA</p>
                 <i class="ion-ios-clock-outline"> 10:00</i>
                 <i class="ion-calendar"> 27-30 September</i>
@@ -68,7 +64,7 @@
     <ion-popover-view>
       <ion-content scroll="false">
         <div class="list">
-          <a class="item" href="#/training" ng-click="closePopover()">
+          <a class="item" href="" ng-click="closePopover()">
             Training
           </a>
           <a class="item" href="#/training" ng-click="closePopover()">

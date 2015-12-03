@@ -9096,24 +9096,24 @@ a.button {
   .bg.bg-darkblue {
     background-image: url("../img/bg.png"); }
 
-.form-container {
-  margin-top: -30%;
+.login-container {
+  margin-top: -40%;
   position: relative;
   padding-top: 50px !important;
   background-color: white;
   bottom: -260px; }
-  .form-container .login-logo {
+  .login-container .login-logo {
     position: relative;
     top: -100px;
     max-width: 100px; }
-  .form-container .login-message {
+  .login-container .login-message {
     font-weight: bold;
     margin-top: -65px; }
-  .form-container .profile-text {
+  .login-container .profile-text {
     position: absolute;
     width: 100%;
     top: -15px; }
-    .form-container .profile-text h2 {
+    .login-container .profile-text h2 {
       top: -15px;
       z-index: 500;
       color: white;
@@ -9128,13 +9128,38 @@ a.button {
   color: lightgrey; }
 
 .button.button-energized.button-clear {
-  margin-top: -10px; }
+  margin-top: -10px;
+  border-color: white !important; }
 
 .button.button-energized.button-outline {
   margin-top: 40px; }
 
 .item > .margin-top10 {
   margin-top: 10px; }
+
+.signin-container {
+  margin-top: -52%;
+  position: relative;
+  padding-top: 50px !important;
+  background-color: white;
+  bottom: -260px; }
+  .signin-container .login-logo {
+    position: relative;
+    top: -100px;
+    max-width: 100px; }
+  .signin-container .login-message {
+    font-weight: bold;
+    margin-top: -65px; }
+  .signin-container .profile-text {
+    position: absolute;
+    width: 100%;
+    top: -15px; }
+    .signin-container .profile-text h2 {
+      top: -15px;
+      z-index: 500;
+      color: white;
+      line-height: 1;
+      margin-left: -38px; }
 
 .input-field {
   border-top: 0px;
@@ -9166,6 +9191,30 @@ a.button {
 .bar-light .button.button-clear {
   color: white; }
 
+.form-container {
+  margin-top: -30%;
+  position: relative;
+  padding-top: 50px !important;
+  background-color: white;
+  bottom: -260px; }
+  .form-container .login-logo {
+    position: relative;
+    top: -100px;
+    max-width: 100px; }
+  .form-container .login-message {
+    font-weight: bold;
+    margin-top: -65px; }
+  .form-container .profile-text {
+    position: absolute;
+    width: 100%;
+    top: -15px; }
+    .form-container .profile-text h2 {
+      top: -15px;
+      z-index: 500;
+      color: white;
+      line-height: 1;
+      margin-left: -38px; }
+
 .tabbed-slidebox .tsb-icons a.active {
   border: 1px solid #FFCC00;
   color: #FFCC00;
@@ -9179,7 +9228,7 @@ a.button {
   background: transparent; }
 
 .tabbed-slidebox .tsb-icons {
-  margin-top: -150px; }
+  margin-top: -171px; }
 
 .list > .item > .training-title {
   color: #FABA26;
@@ -9200,8 +9249,18 @@ a.button {
   margin-left: 0px; }
 
 .bar.bar-header > .avatar {
-  margin-left: 17%;
   color: white; }
+
+.bar.bar-header > .avatar img {
+  position: relative;
+  z-index: 500; }
+
+.bar.bar-header > .dropdown i {
+  color: white;
+  position: relative;
+  z-index: 900;
+  top: 7px;
+  margin-left: 5px; }
 
 .avatar-text {
   color: white;
@@ -9214,6 +9273,23 @@ a.button {
   font-weight: bold; }
 
 .button {
-  line-height: 37px !important;
-  height: 37px !important;
-  min-height: 37px !important; }
+  line-height: 28px !important;
+  height: 28px !important;
+  min-height: 27px !important; }
+
+a.item.chat-message {
+  border: 0px; }
+
+.input-inset {
+  background-color: #2C3A51; }
+
+.send-btn {
+  background-color: #2C3A51;
+  color: white;
+  border: none;
+  font-weight: bold; }
+
+.send-btn:hover {
+  background-color: #2C3A51;
+  color: white;
+  font-weight: bold; }

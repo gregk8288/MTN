@@ -22,48 +22,18 @@ angular.module('app.controllers', ['firebase'])
   }
 })
 
-.controller('mTNAcadamyCtrl', function($scope, $ionicPopover) {
+.controller('mTNAcadamyCtrl', function($scope, $ionicPopover, $state) {
 
-  //// Menu Popover
-  $ionicPopover.fromTemplateUrl('my-menu.html', {
-    scope: $scope
-  }).then(function(popover) {
-    $scope.popover = popover;
-  });
-
-  $scope.openPopover= function($event) {
-    $scope.popover.show($event);
+  $scope.goBack = function(){
+    $state.go('profile');
   };
-  $scope.closePopover = function() {
-    $scope.popover.hide();
-  };
-  //Cleanup the popover when we're done with it!
-  $scope.$on('$destroy', function() {
-    $scope.popover.remove();
-  });
-
 
 })
-  .controller('trainingCtrl', function($scope, $ionicPopover, $firebaseArray){
-    // .fromTemplateUrl() method
-    $ionicPopover.fromTemplateUrl('my-popover.html', {
-      scope: $scope
-    }).then(function(popover) {
-      $scope.popover = popover;
-    });
+  .controller('trainingCtrl', function($scope, $state, $ionicPopover, $firebaseArray){
 
-    $scope.openPopover = function($event) {
-      $scope.popover.show($event);
-    };
-    $scope.closePopover = function() {
-      $scope.popover.hide();
-    };
-    //Cleanup the popover when we're done with it!
-    $scope.$on('$destroy', function() {
-      $scope.popover.remove();
-    });
-
-
+    $scope.goBackt = function(){
+      $state.go('mTNAcadamy');
+    }
 
     /////chat part //////
 
@@ -78,9 +48,4 @@ angular.module('app.controllers', ['firebase'])
       });
       chat.message = "";
     }
-
-
-
-
-
   })

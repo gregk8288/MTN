@@ -8,12 +8,14 @@
         <p class="login-message text-center"> Please enter your email address and we'll find events that you have been invited
           to.</p>
       </div>
-      <form class="list">
+      <form name="userForm" class="list">
         <ion-list>
-          <label class="item item-input item-stacked-label input-field">
+          <label class="item item-input item-stacked-label input-field" ng-class="{ 'has-error' : userForm.email.$valid && !userForm.email.$pristine }">
             <span class="input-label input-label-text text-left">EMAIL ADDRESS</span>
-            <input type="email" placeholder="example@domain.com" ng-model="user.email"/>
+            <input type="email" name="email" placeholder="example@domain.com" ng-model="user.email"/>
+            <span class="valid" ng-show="userForm.email.$valid && !userForm.email.$pristine"><i class="ion-checkmark-round"></i></span>
           </label>
+
         </ion-list>
         <button class="button button-energized button-outline button-block " ng-click="goTosignin();">CONTINUE</button>
       </form>

@@ -16,14 +16,15 @@ $dark:                            #444 !default;
 */
 
 // The path for our ionicons font files, relative to the built CSS in www/css
+
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
-//body, .ionic-body {
-//  font-family:Roboto;
-//}
+body, .ionic-body {
+  font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+}
 
 
 $bgcolor: #2C3A51;
@@ -148,6 +149,11 @@ $trainingOrange: #FABA26;
   padding:0px !important;
 }
 
+.valid{
+  float: right;
+  margin-top: -29px;
+  color: green;
+}
 ////// PROFILE /////
 .test >label{
   display:inline-block;
@@ -286,6 +292,7 @@ a.item.chat-message{
   color:white;
   font-weight: bold;
 }
+
 
 
 

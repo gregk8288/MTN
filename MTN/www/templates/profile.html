@@ -12,7 +12,7 @@
       <div class="profile-text text-center">
         <h2>DB</h2>
       </div>
-      <form class="list profile-form">
+      <form name="userForm" class="list profile-form">
         <div class="test">
           <label class="item item-input item-stacked-label input-field">
             <span class="input-label input-label-text">FIRST NAME</span>
@@ -24,9 +24,10 @@
           </label>
         </div>
         <div>
-          <label class="item item-input item-stacked-label input-field">
+          <label class="item item-input item-stacked-label input-field" ng-class="{ 'has-error' : userForm.email.$valid && !userForm.email.$pristine }">
             <span class="input-label input-label-text">EMAIL ADDRESS</span>
-            <input type="email" placeholder="Enter email"  ng-model="user.email" />
+            <input type="email" name="email" placeholder="Enter email"  ng-model="user.email" />
+            <span class="valid" ng-show="userForm.email.$valid && !userForm.email.$pristine"><i class="ion-checkmark-round"></i></span>
           </label>
           <label class="item item-input item-stacked-label input-field">
             <span class="input-label input-label-text">JOB TITLE</span>

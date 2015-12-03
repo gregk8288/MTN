@@ -18,7 +18,8 @@
     {
       "locator": "https://github.com/apache/cordova-plugin-whitelist.git",
       "id": "cordova-plugin-whitelist"
-    }
+    },
+    "org.apache.cordova.splashscreen"
   ],
   "cordovaPlatforms": [
     "ios",

@@ -30,17 +30,6 @@
   font-weight: normal;
   font-style: normal; }
 
-@font-face {
-  font-family: 'budicon';
-  src:url('../fonts/budicon.eot');
-  src:url('../fonts/budicon.eot') format('embedded-opentype'),
-  url('../fonts/budicon.woff') format('woff'),
-  url('../fonts/budicon.ttf') format('truetype'),
-  url('../fonts/budicon.svg') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
 .ion, .ionicons,
 .ion-alert:before,
 .ion-alert-circled:before,

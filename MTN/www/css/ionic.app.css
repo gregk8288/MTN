@@ -9128,8 +9128,7 @@ a.button {
   color: lightgrey; }
 
 .button.button-energized.button-clear {
-  margin-top: -10px;
-  border-color: white !important; }
+  margin-top: -10px; }
 
 .button.button-energized.button-outline {
   margin-top: 40px; }

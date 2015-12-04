@@ -22,7 +22,7 @@ angular.module('app.controllers', ['firebase'])
   }
 })
 
-.controller('mTNAcadamyCtrl', function($scope, $ionicPopover, $state, $ionicPopup) {
+.controller('mTNAcadamyCtrl', function($scope, $ionicPopover, $state, $ionicPopup, Training) {
 
   $scope.goBack = function(){
     $state.go('profile');
@@ -42,8 +42,22 @@ angular.module('app.controllers', ['firebase'])
     });
   };
 
+
+  var promise = Training.getAllTrainings();
+  promise.then(function (data) {
+    $scope.trainings = [];
+    var item;
+
+    for(var i = 0; i<data.length;i++){
+      item = data[i];
+      $scope.trainings.push(item);
+    }
+  });
+
+
 })
   .controller('trainingCtrl', function($scope, $state, $ionicPopover, /*$firebaseArray,*/ MockService, $ionicScrollDelegate, $timeout){
+
 
     $scope.goBackt = function(){
       $state.go('mTNAcadamy');

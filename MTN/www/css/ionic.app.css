@@ -9305,3 +9305,9 @@ a.item.chat-message {
 .item.anitem {
   font-size: 12px !important;
   color: darkgray; }
+
+.bar-footer {
+  border-top-width: 0px !important; }
+
+.bar {
+  border-top: 0px !important; }

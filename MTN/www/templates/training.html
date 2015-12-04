@@ -19,25 +19,36 @@
         </div>
         <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
           <ion-slide class="tabbed-slider-content" on-swipe-left="getContent();" >
-            <div class="list mtnAcademy-list main-content" style="height:100%">
-              <div class="list list-container" style="height:calc(100% - 86px); overflow-x:hidden; overflow-y:auto;">
-                <a href="" class="item item-avatar chat-message" ng-repeat="chat in chats">
-                  <img src="https://media.licdn.com/mpr/mpr/shrink_100_100/AAEAAQAAAAAAAAMQAAAAJDk4MWZkMzFlLWQ1ZTMtNDc1Ny04NmE2LTMwODA2NDM2ZDNiZg.png" alt="Tangent" />
-                  <p class="training-title">{{chat.user}}</p>
-                  <p>{{chat.message}}</p>
-                </a>
+            <ion-content delegate-handle="userMessageScroll">
+            <div class="list mtnAcademy-list main-content" style="height:100%" >
+              <div class="list list-container" style="height:calc(100% - 86px); overflow-x:hidden; overflow-y:auto;" ng-repeat="message in messages">
+                <div ng-if="user._id !== message.userId">
+                  <a href="" class="item item-avatar chat-message">
+                    <img src="http://images.layar.com/images/threedtest/icon_high.png?1393237933.0" alt="Tangent" />
+                    <p class="training-title">{{message.userId}}</p>
+                    <p>{{message.text}}</p>
+                  </a>
+                </div>
+                <div ng-if="user._id === message.userId">
+                  <a href="" class="item item-avatar chat-message">
+                    <img src="https://media.licdn.com/mpr/mpr/shrink_100_100/AAEAAQAAAAAAAAMQAAAAJDk4MWZkMzFlLWQ1ZTMtNDc1Ny04NmE2LTMwODA2NDM2ZDNiZg.png" alt="Tangent" />
+                    <p class="training-title">{{message.userId}}</p>
+                    <p>{{message.text}}</p>
+                  </a>
+                </div>
               </div>
-              <form action="">
+              <form name="sendMessageForm">
                 <div class="list">
                   <div class="item item-input-inset input-inset">
                     <label class="item-input-wrapper">
                       <input type="text" placeholder="Message" ng-model="chat.message">
                     </label>
-                    <a class="button send-btn" ng-click="sendChat(chat)">Send</a>
+                    <a class="button send-btn" type="submit" ng-click="sendMessage(chat)">Send</a>
                   </div>
                 </div>
               </form>
             </div>
+            </ion-content>
           </ion-slide>
           <ion-slide class="tabbed-slider-content">
             <div class="list mtnAcademy-list">
@@ -67,24 +78,24 @@
       </tab-slide-box>
     </div>
   </ion-content>
-  <script id="my-popover.html" type="text/ng-template">
-    <ion-popover-view>
-      <ion-content scroll="false">
-        <div class="list">
-          <a class="item" href="#"  ng-click="closePopover();">
-            <img src="img/status-available-icon.png" alt="available" />
-            Available
-          </a>
-          <a class="item" href="#"  ng-click="closePopover();">
-            <img src="img/status-away.png" alt="away" />
-            Away
-          </a>
-          <a class="item" href="#"  ng-click="closePopover();">
-            <img src="img/status_do_not_disturb.png" alt="notDisturb" />
-            Do not disturb
-          </a>
-        </div>
-      </ion-content>
-    </ion-popover-view>
-  </script>
+  <!--<script id="my-popover.html" type="text/ng-template">-->
+    <!--<ion-popover-view>-->
+      <!--<ion-content scroll="false">-->
+        <!--<div class="list">-->
+          <!--<a class="item" href="#"  ng-click="closePopover();">-->
+            <!--<img src="img/status-available-icon.png" alt="available" />-->
+            <!--Available-->
+          <!--</a>-->
+          <!--<a class="item" href="#"  ng-click="closePopover();">-->
+            <!--<img src="img/status-away.png" alt="away" />-->
+            <!--Away-->
+          <!--</a>-->
+          <!--<a class="item" href="#"  ng-click="closePopover();">-->
+            <!--<img src="img/status_do_not_disturb.png" alt="notDisturb" />-->
+            <!--Do not disturb-->
+          <!--</a>-->
+        <!--</div>-->
+      <!--</ion-content>-->
+    <!--</ion-popover-view>-->
+  <!--</script>-->
 </ion-view>

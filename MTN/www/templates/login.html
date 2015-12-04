@@ -8,14 +8,14 @@
         <p class="login-message text-center"> Please enter your email address and we'll find events that you have been invited
           to.</p>
       </div>
-      <form class="list">
+      <form class="list" >
         <ion-list>
           <label class="item item-input item-stacked-label input-field">
             <span class="input-label input-label-text text-left">EMAIL ADDRESS</span>
             <input type="email" placeholder="example@domain.com" ng-model="user.email"/>
           </label>
         </ion-list>
-        <button class="button button-energized button-outline button-block " ng-click="goTosignin();">CONTINUE</button>
+        <button class="button button-energized button-outline button-block" ng-click="loginEmail(user);" >CONTINUE</button>
       </form>
     </div>
   </ion-content>

@@ -130,7 +130,7 @@ angular.module('app.controllers', ['firebase'])
 
         setTimeout(function() {
           deferred.resolve(getMockMessages());
-        }, 1500);
+        }, 500);
 
         return deferred.promise;
       };

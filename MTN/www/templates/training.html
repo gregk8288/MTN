@@ -19,7 +19,7 @@
         </div>
         <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
           <ion-slide class="tabbed-slider-content" on-swipe-left="getContent();">
-            <ion-content delegate-handle="userMessageScroll">
+            <ion-content delegate-handle="userMessageScroll" class="chat-scroll-content">
               <div class="list mtnAcademy-list main-content" style="height:100%">
                 <div class="list list-container" ng-repeat="message in messages">
 
@@ -44,7 +44,8 @@
                 </div>
 
               </div>
-              <form name="sendMessageForm">
+            </ion-content>
+                          <form name="sendMessageForm" class="form-bottom">
                 <div class="list">
                   <div class="item item-input-inset input-inset">
                     <label class="item-input-wrapper">
@@ -54,7 +55,6 @@
                   </div>
                 </div>
               </form>
-            </ion-content>
           </ion-slide>
           <ion-slide class="tabbed-slider-content">
             <div class="list mtnAcademy-list">

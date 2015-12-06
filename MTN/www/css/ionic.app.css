@@ -9198,6 +9198,9 @@ body, .ionic-body {
 .bar-light .button.button-clear {
   color: white; }
 
+.chat-scroll-content {
+  bottom: 55px !important; }
+
 .form-container {
   margin-top: -30%;
   position: relative;
@@ -9238,12 +9241,20 @@ body, .ionic-body {
 .tabbed-slidebox .tsb-icons {
   margin-top: -171px; }
 
-.list > .item > .training-title {
+.form-bottom {
+  position: fixed;
+  width: 100%;
+  bottom: 0vh; }
+
+.button-bar {
+  margin-bottom: 10px; }
+
+.list > .anitem > .trainingss-title {
   color: #FABA26;
   font-weight: bold; }
 
-.mtnAcademy-list {
-  margin-top: 10px; }
+.mtnAcademy-list .list {
+  margin: 0; }
 
 .bar .title.title-left, .bar.bar-light .title {
   text-align: center;

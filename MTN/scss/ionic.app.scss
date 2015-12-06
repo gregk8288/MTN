@@ -168,6 +168,9 @@ $trainingOrange: #FABA26;
   color:white;
 }
 
+.chat-scroll-content{
+  bottom: 55px !important;
+}
 .form-container{
   margin-top: -30%;
   position: relative;
@@ -222,12 +225,24 @@ $trainingOrange: #FABA26;
   margin-top:-171px;
 }
 
+.form-bottom{
+  position: fixed;
+  width: 100%;
+  bottom: 0vh;
+}
+
+.button-bar{
+  margin-bottom:10px;
+}
+
 .list>.anitem>.trainingss-title{
   color:$trainingOrange;
   font-weight: bold;
 }
 .mtnAcademy-list{
-  margin-top:10px;
+  .list{
+    margin: 0;
+  }
 }
 
 .bar .title.title-left, .bar.bar-light .title {

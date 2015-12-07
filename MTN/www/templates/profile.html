@@ -31,11 +31,12 @@
           </label>
           <label class="item item-input item-stacked-label input-field">
             <span class="input-label input-label-text">JOB TITLE</span>
-            <input type="text" placeholder="Enter job title"  ng-model="user.job" />
+            <input type="text" placeholder="Enter job title"  ng-model="user.jobTitle" />
           </label>
         </div>
-        <button class="button button-energized button-outline button-block " ng-click="goToMtnAcademy();">CONTINUE</button>
+        <button class="button button-energized button-outline button-block " ng-click="goToMtnAcademy(user);">CONTINUE</button>
       </form>
-    </div>
+    
+   
   </ion-content>
 </ion-view>

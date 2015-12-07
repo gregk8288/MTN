@@ -1,17 +1,69 @@
-angular.module('app.controllers', ['firebase'])
+angular.module('app.controllers', ['pouchdb'])
 
-.controller('loginCtrl', function($scope, $state) {
+.controller('loginCtrl', function($scope, $state,$rootScope, pouchCollection) {
+    var dbName = 'users';
+    $scope.tasks = pouchCollection(dbName);
+   
 
+        
+    $scope.email = function(user) {
+        $rootScope.email = user.email;
+        console.log($rootScope.email);
+        $scope.goTosignin();
+    };
+   
+      $scope.online = !$scope.online;
+      if ($scope.online) {  // Read http://pouchdb.com/api.html#sync
+       $scope.sync = $scope.tasks.$db.replicate.sync('https://couchdb-c29371.smileupps.com/' + dbName, {live: true})
+          .on('error', function (err) {
+            console.log("Syncing stopped");
+            console.log(err);
+          });
+      } else {
+        $scope.sync.cancel();
+      }
+    
   $scope.goTosignin = function () {
     $state.go('signin');
   }
 
 })
 
-.controller('profileCtrl', function($scope, $state) {
+.controller('profileCtrl', function($scope, $state,$rootScope, pouchCollection) {
 
-  $scope.goToMtnAcademy= function () {
-    $state.go('mTNAcadamy');
+    var db = new PouchDB('users');
+    db.allDocs({
+      include_docs: true,
+      attachments: true
+    }).then(function (result) {
+      // handle result
+        console.log(result.rows);
+        console.log(result.rows.length);
+        for(var i=0;i<result.rows.length;i++) {
+            console.log($rootScope.email = "eruaan@gmail.com");
+            console.log(result.rows[i].doc.email);
+            if ($rootScope.email == result.rows[i].doc.email) {
+               
+                $scope.user = result.rows[i].doc; 
+                $rootScope.user = result.rows[i].doc; 
+                console.log($scope.user);
+                return
+            }
+            
+        }
+        
+    }).catch(function (err) {
+      console.log(err);
+    });
+
+    
+  $scope.goToMtnAcademy= function (user) {
+      console.log(user);
+      var dbName = 'users';
+      $scope.tasks = pouchCollection(dbName);
+      
+       $scope.tasks.$add(user);
+       $state.go('mTNAcadamy');
   }
 
 })
@@ -22,26 +74,63 @@ angular.module('app.controllers', ['firebase'])
   }
 })
 
-.controller('mTNAcadamyCtrl', function($scope, $ionicPopover, $state, $ionicPopup, Training) {
-
+.controller('mTNAcadamyCtrl', function($scope, $ionicPopover, $state, $ionicPopup, Training, pouchCollection, $rootScope) {
+  
   $scope.goBack = function(){
     $state.go('profile');
   };
+  
+  $scope.getMyTrainingData = function() {
+  var db = new PouchDB('trainingSelected');
+  db.allDocs({
+    include_docs: true,
+    attachments: true
+  }).then(function (result) {
+    // handle result
 
-  $scope.showConfirm = function() {
-    var confirmPopup = $ionicPopup.confirm({
-      title: 'Add Excel training',
-      template: 'By adding this training to your profile you will receive any notifications / updates send to this group'
-    });
-    confirmPopup.then(function(res) {
-      if(res) {
-        console.log('You are sure');
-      } else {
-        console.log('You are not sure');
+      var events = [];
+      for(var i=0;i<result.rows.length;i++) {
+
+          if ($rootScope.user._id == result.rows[i].doc.user_id) {
+              events.push(result.rows[i].doc); 
+          }
+          
       }
-    });
-  };
+      $scope.myTraining = events;
 
+  }).catch(function (err) {
+    console.log(err);
+  });
+}
+
+    $scope.GoToMessaging = function(training) {
+     $state.go('mTNAcadamy');
+    }
+  $scope.showConfirm = function(training) {
+    
+      training.user_id = $rootScope.user._id;
+      var dbName = 'trainingSelected';
+      $scope.tasks = pouchCollection(dbName);
+      $scope.tasks.$add(training);
+      
+       
+      };
+      
+  var db = new PouchDB('training');
+  var allevents = []
+  
+  db.allDocs({
+    include_docs: true,
+    attachments: true
+  }).then(function (result) {
+    // handle result
+ 
+              for(var i=0;i<result.rows.length;i++) {
+              allevents.push(result.rows[i].doc); 
+          }
+          $scope.trainings = allevents;
+          
+      });
 
   var promise = Training.getAllTrainings();
   promise.then(function (data) {
@@ -63,19 +152,7 @@ angular.module('app.controllers', ['firebase'])
       $state.go('mTNAcadamy');
     }
 
-    /////chat part //////
-    //
-    //var ref = new Firebase('https://hel.firebaseio.com/');
-    //var sync = $firebaseArray(ref);
-    //$scope.chats = sync;
-    //
-    //$scope.sendChat = function(chat){
-    //  $scope.chats.$add({
-    //    user:"Tangent Solutions",
-    //    message: chat.message
-    //  });
-    //  chat.message = "";
-    //}
+
 
     $scope.toUser = {
       _id: '534b8e5aaa5e7afc1b23e69b',

@@ -9090,7 +9090,7 @@ a.button {
   transition-duration: 0s; }
 
 body, .ionic-body {
-  font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif; }
+  font-family: "Roboto","Helvetica Neue", "Segoe UI", sans-serif; }
 
 .bg {
   background-repeat: no-repeat;
@@ -9238,7 +9238,7 @@ body, .ionic-body {
 .tabbed-slidebox .tsb-icons {
   margin-top: -171px; }
 
-.list > .item > .training-title {
+.list > .anitem > .trainingss-title {
   color: #FABA26;
   font-weight: bold; }
 

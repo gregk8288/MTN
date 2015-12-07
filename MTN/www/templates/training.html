@@ -23,15 +23,15 @@
               <div class="list mtnAcademy-list main-content" style="height:100%">
                 <div class="list list-container" ng-repeat="message in messages">
 
-                  <div href="#" class="item item-avatar chat-message" ng-if="user._id !== message.userId">
+                  <a href="#" class="item item-avatar chat-message" ng-if="user._id !== message.userId">
                     <img src="http://images.layar.com/images/threedtest/icon_high.png?1393237933.0" alt="Tangent"/>
+                    <div class="chat-bubble left">
+                      <p class="training-title">{{message.userId}}</p>
+                      <p class="usermessage">{{message.text}}</p>
+                    </div>
+                  </a>
 
-                    <p class="training-title">{{message.userId}}</p>
-
-                    <p class="usermessage">{{message.text}}</p>
-                  </div>
-
-                  <div href="#" class="item item-avatar-right chat-message" ng-if="user._id === message.userId">
+                  <a href="#" class="item item-avatar-right chat-message" ng-if="user._id === message.userId">
                     <img
                       src="https://media.licdn.com/mpr/mpr/shrink_100_100/AAEAAQAAAAAAAAMQAAAAJDk4MWZkMzFlLWQ1ZTMtNDc1Ny04NmE2LTMwODA2NDM2ZDNiZg.png"
                       alt="Tangent"/>
@@ -39,7 +39,7 @@
                     <p class="training-title text-right">{{message.username}}</p>
 
                     <p class="text-right usermessage">{{message.text.message}}</p>
-                  </div>
+                  </a>
 
                 </div>
 

@@ -26,6 +26,7 @@ $dark:                            #444 !default;
   used under CC BY http://creativecommons.org/licenses/by/4.0/
   Modified icons to fit ionicon’s grid from original.
 */
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,500,100");
 @font-face {
   font-family: "Ionicons";
   src: url("../lib/ionic/fonts/ionicons.eot?v=2.0.1");
@@ -3338,7 +3339,7 @@ body,
   color: #000;
   word-wrap: break-word;
   font-size: 14px;
-  font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 20px;
   text-rendering: optimizeLegibility;
   -webkit-backface-visibility: hidden;
@@ -3576,7 +3577,7 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #000;
   font-weight: 500;
-  font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 1.2; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
   .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
@@ -6871,7 +6872,7 @@ input,
 button,
 select,
 textarea {
-  font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif; }
+  font-family: "Roboto", sans-serif; }
 
 .item-input {
   display: -webkit-box;
@@ -9089,8 +9090,22 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+<<<<<<< HEAD
 body, .ionic-body {
   font-family: "Roboto","Helvetica Neue", "Segoe UI", sans-serif; }
+=======
+[nav-view-transition="ios"][nav-view-direction="back"] .bar .bar-header.barheader {
+  background-color: #2C3A51 !important; }
+
+[nav-view-transition="ios"][nav-view-direction="forward"] .bar .bar-header.barheader {
+  background-color: #2C3A51 !important; }
+
+[nav-bar-transition="ios"] [nav-bar="active"] .bar .bar-header.barheader, [nav-bar-transition="ios"] [nav-bar="entering"] .bar.bar-header.barheader {
+  background-color: #2C3A51 !important; }
+
+.pane {
+  background-color: #2C3A51 !important; }
+>>>>>>> 3cb7769e2a689827646af2ee2213196111d90acf
 
 .bg {
   background-repeat: no-repeat;
@@ -9105,13 +9120,6 @@ body, .ionic-body {
   padding-top: 50px !important;
   background-color: white;
   bottom: -260px; }
-  .login-container .login-logo {
-    position: relative;
-    top: -100px;
-    max-width: 100px; }
-  .login-container .login-message {
-    font-weight: bold;
-    margin-top: -65px; }
   .login-container .profile-text {
     position: absolute;
     width: 100%;
@@ -9131,10 +9139,14 @@ body, .ionic-body {
   color: lightgrey; }
 
 .button.button-energized.button-clear {
-  margin-top: -10px; }
+  margin-top: -10px;
+  font-weight: 500;
+  font-size: 14px; }
 
 .button.button-energized.button-outline {
-  margin-top: 40px; }
+  margin-top: 40px;
+  padding: 5px;
+  font-size: 14px; }
 
 .item > .margin-top10 {
   margin-top: 10px; }
@@ -9149,9 +9161,6 @@ body, .ionic-body {
     position: relative;
     top: -100px;
     max-width: 100px; }
-  .signin-container .login-message {
-    font-weight: bold;
-    margin-top: -65px; }
   .signin-container .profile-text {
     position: absolute;
     width: 100%;
@@ -9183,10 +9192,37 @@ body, .ionic-body {
 .no-padding {
   padding: 0px !important; }
 
+.message-description {
+  font-weight: 500;
+  margin-top: -65px;
+  font-size: 16px; }
+
+.custom-label {
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  padding-left: 0; }
+
+.custom-segment > .button {
+  padding: 0; }
+
+.icon-circle {
+  border-radius: 50%;
+  background-color: #ffc900;
+  display: inline-block;
+  position: relative;
+  top: -100px;
+  width: 100px;
+  height: 100px;
+  line-height: 112px; }
+  .icon-circle > img {
+    width: 25px;
+    height: 24px; }
+
 .valid {
   float: right;
   margin-top: -29px;
-  color: green; }
+  color: #00cd00; }
 
 .test > label {
   display: inline-block;
@@ -9196,7 +9232,11 @@ body, .ionic-body {
   margin-top: -20%; }
 
 .bar-light .button.button-clear {
-  color: white; }
+  color: white;
+  display: block; }
+
+.chat-scroll-content {
+  bottom: 55px !important; }
 
 .form-container {
   margin-top: -30%;
@@ -9204,10 +9244,6 @@ body, .ionic-body {
   padding-top: 50px !important;
   background-color: white;
   bottom: -260px; }
-  .form-container .login-logo {
-    position: relative;
-    top: -100px;
-    max-width: 100px; }
   .form-container .login-message {
     font-weight: bold;
     margin-top: -65px; }
@@ -9238,12 +9274,24 @@ body, .ionic-body {
 .tabbed-slidebox .tsb-icons {
   margin-top: -171px; }
 
+<<<<<<< HEAD
+=======
+.form-bottom {
+  position: fixed;
+  width: 100%;
+  bottom: 0vh;
+  margin-bottom: 15px; }
+
+.button-bar {
+  margin-bottom: 10px; }
+
+>>>>>>> 3cb7769e2a689827646af2ee2213196111d90acf
 .list > .anitem > .trainingss-title {
   color: #FABA26;
   font-weight: bold; }
 
-.mtnAcademy-list {
-  margin-top: 10px; }
+.mtnAcademy-list .list {
+  margin: 0; }
 
 .bar .title.title-left, .bar.bar-light .title {
   text-align: center;
@@ -9280,11 +9328,6 @@ body, .ionic-body {
   margin-top: -4px;
   font-weight: bold; }
 
-.button {
-  line-height: 28px !important;
-  height: 28px !important;
-  min-height: 27px !important; }
-
 a.item.chat-message {
   border: 0px; }
 
@@ -9311,3 +9354,24 @@ a.item.chat-message {
 
 .bar {
   border-top: 0px !important; }
+
+.send-form {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 6px; }
+
+.chat-scroll-content {
+  bottom: 55px !important; }
+
+.form-bottom {
+  position: fixed;
+  width: 100%;
+  bottom: 0vh;
+  margin-bottom: 15px; }
+
+.button-bar {
+  margin-bottom: 10px; }
+
+.mtnAcademy-list .list {
+  margin: 0; }

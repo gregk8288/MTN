@@ -2,26 +2,28 @@
   <ion-content class="bg bg-darkblue" scroll="false">
     <div class="container login-container padding-20">
       <div class="text-center">
-        <img src="img/add_mail.png" alt="login-logo" class="login-logo"/>
+        <div class="login-logo icon-circle">
+          <img src="img/icon-mail.png" alt="login-logo" class=""/>
+        </div>
       </div>
       <div class="row text-center">
-        <p class="login-message text-center"> Please enter your email address and we'll find events that you have been invited
+        <p class="message-description text-center"> Please enter your email address and we'll find events that you have been invited
           to.</p>
       </div>
       <form name="userForm" class="list">
-        <ion-list>
-          <label class="item item-input item-stacked-label input-field" ng-class="{ 'has-error' : userForm.email.$valid && !userForm.email.$pristine }">
-            <span class="input-label input-label-text text-left">EMAIL ADDRESS</span>
-            <input type="email" name="email" placeholder="example@domain." ng-model="user.email"/>
-            <span class="valid" ng-show="userForm.email.$valid && !userForm.email.$pristine"><i class="ion-checkmark-round"></i></span>
-          </label>
 
-        </ion-list>
+        <label class="item item-input item-floating-label custom-label" ng-class="{ 'has-error' : userForm.email.$valid && !userForm.email.$pristine }">
+          <span class="input-label input-label-text text-left">EMAIL ADDRESS</span>
+          <input type="email" name="email" placeholder="EMAIL ADDRESS" ng-model="user.email"/>
+          <span class="valid" ng-show="userForm.email.$valid && !userForm.email.$pristine"><i class="ion-checkmark"></i></span>
+        </label>
+
         <button class="button button-energized button-outline button-block " ng-click="email(user);">CONTINUE</button>
+
       </form>
     </div>
   </ion-content>
-  <ion-footer-bar align-title="center">
+  <div class="bar-clear bar bar-footer">
     <button class="button button-energized button-clear button-block ">SKIP</button>
-  </ion-footer-bar>
+  </div>
 </ion-view>

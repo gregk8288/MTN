@@ -1,11 +1,11 @@
 <ion-view view-title="MTN Acadamy" ng-init="getMyTrainingData()">
-  <!-- <ion-nav-bar class="bar bar-header bar-light barheader">
+  <ion-nav-bar class="bar bar-header bar-light barheader">
     <span class="avatar" ><img src="img/oval.png" alt="oval" width="35" height="35" /></span>
     <a href="#" class="dropdown">
       <span class="avatar-text" ng-click="goBack();">{{initials | uppercase}}</span>
       <i class="ion-ios-arrow-down"></i>
     </a>
-  </ion-nav-bar> -->
+  </ion-nav-bar>
   <ion-content class="bg bg-darkblue bg-listsize" scroll="false">
     <div class="container-fluid form-container">
       <tab-slide-box>
@@ -33,7 +33,7 @@
             </div>
           </ion-slide>
           <ion-slide class="tabbed-slider-content">
-            
+
             <div class="list mtnAcademy-list">
               <div ng-repeat="training in trainings">
                 <a href="javascript:;" class="item anitem" ng-click="showConfirm(training);">
@@ -43,7 +43,7 @@
                 </a>
               </div>
             </div>
-        
+
           </ion-slide>
         </ion-slide-box>
       </tab-slide-box>

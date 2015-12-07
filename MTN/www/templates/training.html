@@ -1,4 +1,4 @@
-<ion-view view-title="Training">
+<ion-view view-title="{{title}}">
   <ion-nav-bar class="bar bar-header bar-light barheader">
     <span class="avatar"><img src="img/oval.png" alt="oval" width="35" height="35"/></span>
     <a href="#" class="dropdown">
@@ -21,12 +21,12 @@
           <ion-slide class="tabbed-slider-content" on-swipe-left="getContent();">
             <ion-content delegate-handle="userMessageScroll">
               <div class="list mtnAcademy-list main-content" style="height:100%">
-                <div class="list list-container" ng-repeat="message in messages">
+                <div class="list list-container" ng-repeat="message in messages | orderBy: datetime">
 
                   <a href="#" class="item item-avatar chat-message" ng-if="user._id !== message.userId">
                     <img src="http://images.layar.com/images/threedtest/icon_high.png?1393237933.0" alt="Tangent"/>
 
-                    <p class="training-title">{{message.userId}}</p>
+                    <p class="training-title">{{message.username}}</p>
 
                     <p>{{message.text}}</p>
                   </a>
@@ -38,7 +38,7 @@
 
                     <p class="training-title text-right">{{message.username}}</p>
 
-                    <p class="text-right">{{message.text.message}}</p>
+                    <p class="text-right">{{message.text}}</p>
                   </a>
 
                 </div>
@@ -50,7 +50,7 @@
                     <label class="item-input-wrapper">
                       <input type="text" placeholder="Message" ng-model="chat.message">
                     </label>
-                    <a class="button send-btn" type="submit" ng-click="sendMessage(chat)">Send</a>
+                    <a class="button send-btn" type="submit" ng-click="sendMessage(chat.message)">Send</a>
                   </div>
                 </div>
               </form>

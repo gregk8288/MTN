@@ -19,11 +19,10 @@
         </div>
         <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
           <ion-slide class="tabbed-slider-content" on-swipe-left="getContent();">
+            <ion-content delegate-handle="userMessageScroll" class="chat-scroll-content">
+              <div class="list mtnAcademy-list main-content" style="height:100%">
+                <div class="list list-container" ng-repeat="message in messages">
 
-              <div class="list mtnAcademy-list main-content">
-                <ion-content delegate-handle="userMessageScroll" style="height: 500px;">
-                <div class="list list-container">
-                  <div ng-repeat="message in messages" >
                   <a href="#" class="item item-avatar chat-message" ng-if="user._id !== message.userId">
                     <img src="http://images.layar.com/images/threedtest/icon_high.png?1393237933.0" alt="Tangent"/>
 
@@ -41,22 +40,21 @@
 
                     <p class="text-right">{{message.text.message}}</p>
                   </a>
-                  </div>
+
                 </div>
-                </ion-content>
+
               </div>
-
-                <form name="sendMessageForm" class="send-form">
-                  <div class="list">
-                    <div class="item item-input-inset input-inset">
-                      <label class="item-input-wrapper">
-                        <input type="text" placeholder="Message" ng-model="chat.message">
-                      </label>
-                      <a class="button send-btn" type="submit" ng-click="sendMessage(chat)">Send</a>
-                    </div>
-                  </div>
-                </form>
-
+            </ion-content>
+            <form name="sendMessageForm" class="form-bottom">
+              <div class="list">
+                <div class="item item-input-inset input-inset">
+                  <label class="item-input-wrapper">
+                    <input type="text" placeholder="Message" ng-model="chat.message">
+                  </label>
+                  <a class="button send-btn" type="submit" ng-click="sendMessage(chat)">Send</a>
+                </div>
+              </div>
+            </form>
           </ion-slide>
           <ion-slide class="tabbed-slider-content">
             <div class="list mtnAcademy-list">
@@ -94,24 +92,4 @@
       </tab-slide-box>
     </div>
   </ion-content>
-  <!--<script id="my-popover.html" type="text/ng-template">-->
-  <!--<ion-popover-view>-->
-  <!--<ion-content scroll="false">-->
-  <!--<div class="list">-->
-  <!--<a class="item" href="#"  ng-click="closePopover();">-->
-  <!--<img src="img/status-available-icon.png" alt="available" />-->
-  <!--Available-->
-  <!--</a>-->
-  <!--<a class="item" href="#"  ng-click="closePopover();">-->
-  <!--<img src="img/status-away.png" alt="away" />-->
-  <!--Away-->
-  <!--</a>-->
-  <!--<a class="item" href="#"  ng-click="closePopover();">-->
-  <!--<img src="img/status_do_not_disturb.png" alt="notDisturb" />-->
-  <!--Do not disturb-->
-  <!--</a>-->
-  <!--</div>-->
-  <!--</ion-content>-->
-  <!--</ion-popover-view>-->
-  <!--</script>-->
 </ion-view>

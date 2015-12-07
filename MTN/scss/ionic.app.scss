@@ -31,6 +31,21 @@ $bgcolor: #2C3A51;
 $yellowbg: #FFCC00;
 $trainingOrange: #FABA26;
 
+
+[nav-view-transition="ios"][nav-view-direction="back"] .bar .bar-header.barheader {
+  background-color: $bgcolor !important;
+}
+[nav-view-transition="ios"][nav-view-direction="forward"] .bar .bar-header.barheader {
+  background-color: $bgcolor !important;
+}
+
+[nav-bar-transition="ios"] [nav-bar="active"] .bar .bar-header.barheader , [nav-bar-transition="ios"] [nav-bar="entering"] .bar.bar-header.barheader{
+  background-color: $bgcolor !important;
+}
+
+.pane{
+  background-color: $bgcolor !important;
+}
 ////// LOGIN SCREEN //////
 .bg {
   background-repeat: no-repeat;

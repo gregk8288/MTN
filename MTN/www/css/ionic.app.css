@@ -9238,7 +9238,7 @@ body, .ionic-body {
 .tabbed-slidebox .tsb-icons {
   margin-top: -171px; }
 
-.list > .item > .training-title {
+.list > .anitem > .trainingss-title {
   color: #FABA26;
   font-weight: bold; }
 
@@ -9311,3 +9311,9 @@ a.item.chat-message {
 
 .bar {
   border-top: 0px !important; }
+
+.send-form {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 6px; }

@@ -1,46 +1,41 @@
-<ion-view view-title="Training">
-  <ion-nav-bar class="bar bar-header bar-light barheader">
+<ion-view view-title="{{title}}">
+  <!-- <ion-nav-bar class="bar bar-header bar-light barheader">
     <span class="avatar"><img src="img/oval.png" alt="oval" width="35" height="35"/></span>
     <a href="#" class="dropdown">
-      <span class="avatar-text" ng-click="goBackt()">Dj</span>
+      <span class="avatar-text" ng-click="goBackt()">{{initials | uppercase}}</span>
       <i class="ion-ios-arrow-down"></i>
     </a>
-  </ion-nav-bar>
-  <ion-content class="bg bg-darkblue" scroll="false">
+  </ion-nav-bar> -->
+  <ion-content class="bg bg-darkblue bg-listsize" scroll="false">
     <div class="container-fluid form-container" style="height: 100%;">
       <tab-slide-box>
         <div class="tsb-icons padding-left padding-right">
           <div class="tsb-ic-wrp">
             <div class="button-bar">
-              <a href="javascript:;" class="button">MESSAGES</a>
-              <a href="javascript:;" class="button">DELEGATES</a>
+              <a href="javascript:;" class="button button-small">MESSAGES</a>
+              <a href="javascript:;" class="button button-small">DELEGATES</a>
             </div>
           </div>
         </div>
         <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
           <ion-slide class="tabbed-slider-content" on-swipe-left="getContent();">
-            <ion-content delegate-handle="userMessageScroll" class="chat-scroll-content">
+            
+<ion-content delegate-handle="userMessageScroll" class="chat-scroll-content">
               <div class="list mtnAcademy-list main-content" style="height:100%">
-                <div class="list list-container" ng-repeat="message in messages">
+                <div class="list list-container" ng-repeat="message in messages | orderBy: datetime">
 
-                  <a href="#" class="item item-avatar chat-message" ng-if="user._id !== message.userId">
+                  <a href="javascript:;" class="item item-avatar chat-message" ng-if="user._id !== message.userId">
                     <img src="http://images.layar.com/images/threedtest/icon_high.png?1393237933.0" alt="Tangent"/>
-
-                    <p class="training-title">{{message.userId}}</p>
-
-                    <p>{{message.text}}</p>
+                    <div class="chat-bubble left">
+                      <p class="training-title">{{message.username}}</p>
+                      <p class="usermessage">{{message.text}}</p>
+                    </div>
                   </a>
-
-                  <a href="#" class="item item-avatar-right chat-message" ng-if="user._id === message.userId">
-                    <img
-                      src="https://media.licdn.com/mpr/mpr/shrink_100_100/AAEAAQAAAAAAAAMQAAAAJDk4MWZkMzFlLWQ1ZTMtNDc1Ny04NmE2LTMwODA2NDM2ZDNiZg.png"
-                      alt="Tangent"/>
-
-                    <p class="training-title text-right">{{message.username}}</p>
-
-                    <p class="text-right">{{message.text.message}}</p>
+                  <a href="javascript:;" class="item item-avatar-right chat-message" ng-if="user._id === message.userId">
+                      <div class="chat-bubble right">
+                        <p class="text-right usermessage">{{message.text}}</p>
+                      </div>
                   </a>
-
                 </div>
 
               </div>
@@ -51,10 +46,11 @@
                   <label class="item-input-wrapper">
                     <input type="text" placeholder="Message" ng-model="chat.message">
                   </label>
-                  <a class="button send-btn" type="submit" ng-click="sendMessage(chat)">Send</a>
+                  <a class="button send-btn" type="submit" ng-click="sendMessage(chat.message)">Send</a>
                 </div>
               </div>
             </form>
+
           </ion-slide>
           <ion-slide class="tabbed-slider-content">
             <div class="list mtnAcademy-list">

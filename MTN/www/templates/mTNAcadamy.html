@@ -1,54 +1,49 @@
-<ion-view view-title="MTN Acadamy">
-  <ion-nav-bar class="bar bar-header bar-light barheader">
+<ion-view view-title="MTN Acadamy" ng-init="getMyTrainingData()">
+  <!-- <ion-nav-bar class="bar bar-header bar-light barheader">
     <span class="avatar" ><img src="img/oval.png" alt="oval" width="35" height="35" /></span>
     <a href="#" class="dropdown">
-      <span class="avatar-text" ng-click="goBack();">Dj</span>
+      <span class="avatar-text" ng-click="goBack();">{{initials | uppercase}}</span>
       <i class="ion-ios-arrow-down"></i>
     </a>
-  </ion-nav-bar>
-  <ion-content class="bg bg-darkblue" scroll="false">
+  </ion-nav-bar> -->
+  <ion-content class="bg bg-darkblue bg-listsize" scroll="false">
     <div class="container-fluid form-container">
       <tab-slide-box>
+
         <div class="tsb-icons padding-left padding-right">
           <div class="tsb-ic-wrp">
-            <div class="button-bar">
-              <a href="javascript:;" class="button">MY TRAINING</a>
-              <a href="javascript:;" class="button">ALL TRAINING</a>
+
+            <div class="button-bar custom-segment">
+              <a href="javascript:;" ng-click="getMyTrainingData();" class="button button-small">MY TRAINING</a>
+              <a href="javascript:;" class="button button-small">ALL TRAINING</a>
+
             </div>
           </div>
         </div>
         <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
           <ion-slide class="tabbed-slider-content" on-swipe-left="getContent();">
             <div class="list mtnAcademy-list">
-              <a href="#/training" class="item anitem">
-                <p class="training-title">Excel Training</p>
-                <i class="ion-ios-clock-outline"> 10:00</i>
-                <i class="ion-calendar"> 27-30 September</i>
-              </a>
-              <a href="#/training" class="item anitem">
-                <p class="training-title">Java Training</p>
-                <i class="ion-ios-clock-outline"> 10:00</i>
-                <i class="ion-calendar"> 27-30 September</i>
-              </a>
-              <a href="#/training" class="item anitem">
-                <p class="training-title">GIBS Mini MBA</p>
-                <i class="ion-ios-clock-outline"> 10:00</i>
-                <i class="ion-calendar"> 27-30 September</i>
-              </a>
-            </div>
-          </ion-slide>
-          <ion-slide class="tabbed-slider-content">
-            <ion-content style="height:900px;">
-            <div class="list mtnAcademy-list">
-              <div ng-repeat="training in trainings">
-                <a href="#" class="item anitem" ng-click="showConfirm();">
+              <div ng-repeat="training in myTraining">
+                <a href="javascript:;" class="item anitem" ng-click="GoToMessaging(training)">
                   <p class="training-title">{{training.title}}</p>
                   <i class="ion-ios-clock-outline">{{training.time}}</i>
                   <i class="ion-calendar">{{training.period}}</i>
                 </a>
               </div>
             </div>
-            </ion-content>
+          </ion-slide>
+          <ion-slide class="tabbed-slider-content">
+            
+            <div class="list mtnAcademy-list">
+              <div ng-repeat="training in trainings">
+                <a href="javascript:;" class="item anitem" ng-click="showConfirm(training);">
+                  <p class="training-title">{{training.title}}</p>
+                  <i class="ion-ios-clock-outline">{{training.time}}</i>
+                  <i class="ion-calendar">{{training.period}}</i>
+                </a>
+              </div>
+            </div>
+        
           </ion-slide>
         </ion-slide-box>
       </tab-slide-box>

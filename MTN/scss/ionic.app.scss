@@ -16,20 +16,21 @@ $dark:                            #444 !default;
 */
 
 // The path for our ionicons font files, relative to the built CSS in www/css
-
 $ionicons-font-path: "../lib/ionic/fonts" !default;
-
-// Include all of Ionic
-@import "www/lib/ionic/scss/ionic";
-
-body, .ionic-body {
-  font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
-}
-
-
+$font-family-base: "Roboto", sans-serif !default;
 $bgcolor: #2C3A51;
 $yellowbg: #FFCC00;
 $trainingOrange: #FABA26;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,500,100');
+
+
+body, .ionic-body {
+  font-family: "Roboto","Helvetica Neue", "Segoe UI", sans-serif;
+}
+
 
 
 [nav-view-transition="ios"][nav-view-direction="back"] .bar .bar-header.barheader {
@@ -53,25 +54,20 @@ $trainingOrange: #FABA26;
   background-color: white;
   &.bg-darkblue {
     background-image: url('../img/bg.png');
+   
+  }
+  &.bg-listsize {
+       background-size:100% 12%;
   }
 }
 
 .login-container{
-  margin-top: -40%;
+  
   position: relative;
   padding-top: 50px !important;
   background-color: white;
-  bottom: -260px;
+  bottom: -96px;
 
-  .login-logo{
-    position: relative;
-    top: -100px;
-    max-width: 100px;
-  }
-  .login-message{
-    font-weight: bold;
-    margin-top:-65px;
-  }
   .profile-text{
     position: absolute;
     width: 100%;
@@ -99,10 +95,14 @@ $trainingOrange: #FABA26;
 
 .button.button-energized.button-clear{
   margin-top:-10px;
+  font-weight: 500;
+  font-size: 14px;
 }
 
 .button.button-energized.button-outline{
   margin-top:40px;
+  padding: 5px;
+  font-size: 14px;
 }
 
 ///// SIGN IN PAGE /////
@@ -111,21 +111,17 @@ $trainingOrange: #FABA26;
 }
 
 .signin-container{
-  margin-top: -52%;
   position: relative;
   padding-top: 50px !important;
   background-color: white;
-  bottom: -260px;
+  bottom: -51px;
 
   .login-logo{
     position: relative;
     top: -100px;
     max-width: 100px;
   }
-  .login-message{
-    font-weight: bold;
-    margin-top:-65px;
-  }
+
   .profile-text{
     position: absolute;
     width: 100%;
@@ -164,10 +160,45 @@ $trainingOrange: #FABA26;
   padding:0px !important;
 }
 
+.message-description{
+  font-weight: 500;
+  margin-top:-65px;
+  font-size: 16px;
+}
+
+.custom-label{
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  padding-left: 0;
+}
+
+.custom-segment {
+  > .button{
+    padding: 0;
+  }
+}
+
+.icon-circle{
+
+  border-radius: 50%;
+  background-color: $energized;
+  display: inline-block;
+  position: relative;
+  top: -100px;
+  width: 100px;
+  height: 100px;
+  line-height: 112px;
+  > img{
+    width: 25px;
+    height: 24px;
+  }
+}
+
 .valid{
   float: right;
   margin-top: -29px;
-  color: green;
+  color: lighten(green, 15%);
 }
 ////// PROFILE /////
 .test >label{
@@ -181,6 +212,7 @@ $trainingOrange: #FABA26;
 
 .bar-light .button.button-clear{
   color:white;
+  display: block;
 }
 
 .chat-scroll-content{
@@ -192,12 +224,6 @@ $trainingOrange: #FABA26;
   padding-top: 50px !important;
   background-color: white;
   bottom: -260px;
-
-  .login-logo{
-    position: relative;
-    top: -100px;
-    max-width: 100px;
-  }
   .login-message{
     font-weight: bold;
     margin-top:-65px;
@@ -299,16 +325,14 @@ $trainingOrange: #FABA26;
   margin-top: -4px;
   font-weight: bold;
 }
-.button {
-    line-height: 28px !important;
-    height:28px !important;
-    min-height: 27px !important;
-}
 
 //// TRAINING /////
 
 a.item.chat-message{
   border:0px;
+  .usermessage{
+    white-space: normal;
+  }
 }
 .input-inset{
   background-color:$bgcolor;
@@ -358,3 +382,68 @@ a.item.chat-message{
 .mtnAcademy-list .list {
   margin: 0;
 }
+.training-title{
+  color:$trainingOrange !important;
+  font-weight: bold;
+
+}
+.item p{
+  white-space: normal;
+}
+
+.chat-bubble{
+  border-radius: 5px;
+  display: inline-block;
+  padding: 10px 18px;
+  position: relative;
+  max-width: 100%;
+}
+
+.chat-bubble:before {
+  content: "\00a0";
+  display: block;
+  height: 16px;
+  width: 9px;
+  position: absolute;
+  margin-left: -9px;
+}
+
+.chat-bubble.left {
+  background-color: #e6e5eb;
+  float: left;
+  >p{
+    color: #000;
+    font-weight: 500;
+    text-align: left;
+  }
+}
+
+.chat-bubble.left:before {
+  background-color: #e6e5eb;
+  left: 10px;
+  -webkit-transform: rotate(70deg) skew(5deg);
+}
+
+.chat-bubble.right {
+  background-color:$yellowbg;
+  float: right;
+  right:-50px;
+  >p{
+    color: #fff;
+    font-weight: 500;
+    text-align: left;
+  }
+}
+
+.chat-bubble.right:before {
+  background-color: $yellowbg;
+  right: 0px;
+  transform: rotate(50deg);
+  margin-top:-4px;
+}
+
+
+
+
+
+

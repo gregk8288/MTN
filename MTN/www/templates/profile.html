@@ -1,41 +1,59 @@
 <ion-view>
-  <ion-nav-bar class="bar bar-header bar-light barheader">
+  <!-- <ion-nav-bar class="bar bar-header bar-light barheader">
     <ion-nav-back-button style="display:block;" class="button-clear">
       <i class="ion-arrow-left-c"></i> Back
     </ion-nav-back-button>
-  </ion-nav-bar>
+  </ion-nav-bar> -->
   <ion-content class="bg bg-darkblue" scroll="false">
     <div class="container signin-container padding-20">
       <div class="text-center">
         <img src="img/oval.png" alt="login-logo" class="login-logo"/>
       </div>
       <div class="profile-text text-center">
-        <h2>DB</h2>
+        <h2>{{initials | uppercase}}</h2>
       </div>
       <form name="userForm" class="list profile-form">
-        <div class="test">
-          <label class="item item-input item-stacked-label input-field">
-            <span class="input-label input-label-text">FIRST NAME</span>
-            <input type="text" placeholder="Enter name here" ng-model="user.firstname" />
-          </label>
-          <label class="item item-input item-stacked-label input-field">
-            <span class="input-label input-label-text">LAST NAME</span>
-            <input type="text" placeholder="Enter last name here" ng-model="user.lastname" />
-          </label>
+        <div class="row no-padding">
+          <div class="col col-50">
+            <label class="item item-input item-floating-label custom-label">
+              <span class="input-label input-label-text">FIRST NAME</span>
+              <input type="text" placeholder="FIRST NAME" ng-model="user.firstname" />
+            </label>
+          </div>
+
+          <div class="col col-50">
+            <label class="item item-input item-floating-label custom-label">
+              <span class="input-label input-label-text">LAST NAME</span>
+              <input type="text" placeholder="LAST NAME" ng-model="user.lastname" />
+            </label>
+          </div>
         </div>
-        <div>
-          <label class="item item-input item-stacked-label input-field" ng-class="{ 'has-error' : userForm.email.$valid && !userForm.email.$pristine }">
-            <span class="input-label input-label-text">EMAIL ADDRESS</span>
-            <input type="email" name="email" placeholder="Enter email"  ng-model="user.email" />
-            <span class="valid" ng-show="userForm.email.$valid && !userForm.email.$pristine"><i class="ion-checkmark-round"></i></span>
-          </label>
-          <label class="item item-input item-stacked-label input-field">
+
+        <div class="row no-padding">
+          <div class="col">
+            <label class="item item-input item-floating-label custom-label" ng-class="{ 'has-error' : userForm.email.$valid && !userForm.email.$pristine }">
+              <span class="input-label input-label-text">EMAIL ADDRESS</span>
+              <input type="email" name="email" placeholder="EMAIL ADDRESS"  ng-model="user.email" />
+              <span class="valid" ng-show="userForm.email.$valid && !userForm.email.$pristine"><i class="ion-checkmark-round"></i></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="row no-padding">
+          <div class="col">
+          <label class="item item-input item-floating-label custom-label">
             <span class="input-label input-label-text">JOB TITLE</span>
-            <input type="text" placeholder="Enter job title"  ng-model="user.job" />
+
+            <input type="text" placeholder="JOB TITLE"  ng-model="user.jobTitle" />
+
           </label>
+          </div>
         </div>
-        <button class="button button-energized button-outline button-block " ng-click="goToMtnAcademy();">CONTINUE</button>
+
+        <button class="button button-energized button-outline button-block " ng-click="goToMtnAcademy(user);">CONTINUE</button>
+
       </form>
-    </div>
+    
+   
   </ion-content>
 </ion-view>

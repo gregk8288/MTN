@@ -1,7 +1,7 @@
 <ion-view>
   <ion-nav-bar class="bar bar-header bar-light barheader">
-    <ion-nav-back-button style="display:block;" class="button-clear">
-      <i class="ion-arrow-left-c"></i> Back
+    <ion-nav-back-button class="button-clear">
+      <i class="ion-arrow-left-c"></i>
     </ion-nav-back-button>
   </ion-nav-bar>
   <ion-content class="bg bg-darkblue" scroll="false">
@@ -10,7 +10,7 @@
         <img src="img/add_user.png" alt="login-logo" class="login-logo"/>
       </div>
       <div class="row text-center">
-        <p class="login-message text-center">Sign in with one of your social media profiles and help us complete your
+        <p class="message-description text-center">Sign in with one of your social media profiles and help us complete your
           profile.</p>
       </div>
       <div class="list margin-top20">
@@ -36,7 +36,7 @@
 
     </div>
   </ion-content>
-  <ion-footer-bar align-title="center">
-    <button class="button button-energized button-clear button-block" ng-click="goToProfile();">SKIP</button>
-  </ion-footer-bar>
+  <div class="bar-clear bar bar-footer">
+    <button ng-click="goToProfile();" class="button button-energized button-clear button-block ">SKIP</button>
+  </div>
 </ion-view>

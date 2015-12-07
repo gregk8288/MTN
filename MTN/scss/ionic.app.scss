@@ -398,7 +398,6 @@ a.item.chat-message{
   width: 9px;
   position: absolute;
   margin-left: -9px;
-
 }
 
 .chat-bubble.left {
@@ -411,6 +410,20 @@ a.item.chat-message{
   left: 10px;
   -webkit-transform: rotate(70deg) skew(5deg);
 }
+
+.chat-bubble.right {
+  background-color:$yellowbg;
+  color: #fff;
+  float: right;
+}
+
+.chat-bubble.right:before {
+  background-color: $yellowbg;
+  right: 0px;
+  transform: rotate(50deg);
+  margin-top:-4px;
+}
+
 
 
 

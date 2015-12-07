@@ -322,6 +322,9 @@ $trainingOrange: #FABA26;
 
 a.item.chat-message{
   border:0px;
+  .usermessage{
+    white-space: normal;
+  }
 }
 .input-inset{
   background-color:$bgcolor;

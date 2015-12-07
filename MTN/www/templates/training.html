@@ -1,11 +1,11 @@
 <ion-view view-title="{{title}}">
-  <ion-nav-bar class="bar bar-header bar-light barheader">
+  <!-- <ion-nav-bar class="bar bar-header bar-light barheader">
     <span class="avatar"><img src="img/oval.png" alt="oval" width="35" height="35"/></span>
     <a href="#" class="dropdown">
-      <span class="avatar-text" ng-click="goBackt()">{{}}</span>
+      <span class="avatar-text" ng-click="goBackt()">{{initials | uppercase}}</span>
       <i class="ion-ios-arrow-down"></i>
     </a>
-  </ion-nav-bar>
+  </ion-nav-bar> -->
   <ion-content class="bg bg-darkblue bg-listsize" scroll="false">
     <div class="container-fluid form-container" style="height: 100%;">
       <tab-slide-box>
@@ -24,14 +24,14 @@
               <div class="list mtnAcademy-list main-content" style="height:100%">
                 <div class="list list-container" ng-repeat="message in messages | orderBy: datetime">
 
-                  <a href="#" class="item item-avatar chat-message" ng-if="user._id !== message.userId">
+                  <a href="javascript:;" class="item item-avatar chat-message" ng-if="user._id !== message.userId">
                     <img src="http://images.layar.com/images/threedtest/icon_high.png?1393237933.0" alt="Tangent"/>
                     <div class="chat-bubble left">
                       <p class="training-title">{{message.username}}</p>
                       <p class="usermessage">{{message.text}}</p>
                     </div>
                   </a>
-                  <a href="#" class="item item-avatar-right chat-message" ng-if="user._id === message.userId">
+                  <a href="javascript:;" class="item item-avatar-right chat-message" ng-if="user._id === message.userId">
                       <div class="chat-bubble right">
                         <p class="text-right usermessage">{{message.text}}</p>
                       </div>

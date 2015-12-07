@@ -9112,14 +9112,13 @@ body, .ionic-body {
   .bg.bg-darkblue {
     background-image: url("../img/bg.png"); }
   .bg.bg-listsize {
-    background-size: 100% 10%; }
+    background-size: 100% 12%; }
 
 .login-container {
-  margin-top: -40%;
   position: relative;
   padding-top: 50px !important;
   background-color: white;
-  bottom: -260px; }
+  bottom: -96px; }
   .login-container .profile-text {
     position: absolute;
     width: 100%;
@@ -9152,11 +9151,10 @@ body, .ionic-body {
   margin-top: 10px; }
 
 .signin-container {
-  margin-top: -52%;
   position: relative;
   padding-top: 50px !important;
   background-color: white;
-  bottom: -260px; }
+  bottom: -51px; }
   .signin-container .login-logo {
     position: relative;
     top: -100px;

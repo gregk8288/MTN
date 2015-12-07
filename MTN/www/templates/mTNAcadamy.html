@@ -1,11 +1,11 @@
 <ion-view view-title="MTN Acadamy" ng-init="getMyTrainingData()">
-  <ion-nav-bar class="bar bar-header bar-light barheader">
+  <!-- <ion-nav-bar class="bar bar-header bar-light barheader">
     <span class="avatar" ><img src="img/oval.png" alt="oval" width="35" height="35" /></span>
     <a href="#" class="dropdown">
-      <span class="avatar-text" ng-click="goBack();"></span>
+      <span class="avatar-text" ng-click="goBack();">{{initials | uppercase}}</span>
       <i class="ion-ios-arrow-down"></i>
     </a>
-  </ion-nav-bar>
+  </ion-nav-bar> -->
   <ion-content class="bg bg-darkblue bg-listsize" scroll="false">
     <div class="container-fluid form-container">
       <tab-slide-box>
@@ -24,7 +24,7 @@
           <ion-slide class="tabbed-slider-content" on-swipe-left="getContent();">
             <div class="list mtnAcademy-list">
               <div ng-repeat="training in myTraining">
-                <a href="#" class="item anitem" ng-click="GoToMessaging(training)">
+                <a href="javascript:;" class="item anitem" ng-click="GoToMessaging(training)">
                   <p class="training-title">{{training.title}}</p>
                   <i class="ion-ios-clock-outline">{{training.time}}</i>
                   <i class="ion-calendar">{{training.period}}</i>
@@ -36,7 +36,7 @@
             
             <div class="list mtnAcademy-list">
               <div ng-repeat="training in trainings">
-                <a href="#" class="item anitem" ng-click="showConfirm(training);">
+                <a href="javascript:;" class="item anitem" ng-click="showConfirm(training);">
                   <p class="training-title">{{training.title}}</p>
                   <i class="ion-ios-clock-outline">{{training.time}}</i>
                   <i class="ion-calendar">{{training.period}}</i>

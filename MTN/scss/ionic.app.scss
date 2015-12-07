@@ -57,16 +57,16 @@ body, .ionic-body {
    
   }
   &.bg-listsize {
-       background-size:100% 10%;
+       background-size:100% 12%;
   }
 }
 
 .login-container{
-  margin-top: -40%;
+  
   position: relative;
   padding-top: 50px !important;
   background-color: white;
-  bottom: -260px;
+  bottom: -96px;
 
   .profile-text{
     position: absolute;
@@ -111,11 +111,10 @@ body, .ionic-body {
 }
 
 .signin-container{
-  margin-top: -52%;
   position: relative;
   padding-top: 50px !important;
   background-color: white;
-  bottom: -260px;
+  bottom: -51px;
 
   .login-logo{
     position: relative;

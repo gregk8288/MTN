@@ -112,16 +112,27 @@ angular.module('app.controllers', ['pouchdb'])
       $rootScope.selectedTraining = training;
     }
     $scope.showConfirm = function (training) {
-      training.user_id = $rootScope.user._id;
-      var dbName = 'trainingrrrelected';
-      $scope.tasks = pouchCollection(dbName);
-      $scope.tasks.$add(training);
+        navigator.notification.confirm("By adding this training to your profile you will receive any notification / updates sent to this group.", function(buttonIndex) {
+                    switch(buttonIndex) {
+                        case 1:
+                            
+                            break;
+                        case 2:
+                            training.user_id = $rootScope.user._id;
+                            var dbName = 'trainingrrrelected';
+                            $scope.tasks = pouchCollection(dbName);
+                            $scope.tasks.$add(training);
      
-        $scope.sync = $scope.tasks.$db.replicate.sync('https://couchdb-c29371.smileupps.com/' + dbName, {live: true})
-          .on('error', function (err) {
-            console.log("Syncing stopped");
-            console.log(err);
-          });
+                              $scope.sync = $scope.tasks.$db.replicate.sync('https://couchdb-c29371.smileupps.com/' + dbName, {live: true})
+                                .on('error', function (err) {
+                                  console.log("Syncing stopped");
+                                  console.log(err);
+                                });
+                            break;
+                      
+                    }
+                }, "add " + $rootScope.selectedTraining.title + "?", [ "Dismiss", "Accept" ]);
+      
       
 
 

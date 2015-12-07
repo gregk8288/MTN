@@ -1,11 +1,11 @@
 <ion-view view-title="MTN Acadamy" ng-init="getMyTrainingData()">
-  <ion-nav-bar class="bar barheader">
-    <span ><img src="img/oval.png" alt="oval" width="35" height="35" /></span>
-    <a href="#" class="dropdown">
-      <span class="avatar-text" ng-click="goBack();">{{initials | uppercase}}</span>
-      <i class="ion-ios-arrow-down"></i>
-    </a>
-  </ion-nav-bar>
+  <ion-nav-bar class="bar bar-header bar-light barheader">
+   <span class="avatar"><img src="img/oval.png" alt="oval" width="35" height="35"/></span>
+   <a href="#" class="dropdown">
+     <span class="avatar-text" ng-click="goBackt()">{{initials | uppercase}}</span>
+     <i class="ion-ios-arrow-down"></i>
+   </a>
+ </ion-nav-bar>
   <ion-content class="bg bg-darkblue bg-listsize" scroll="false">
     <div class="container-fluid form-container">
       <tab-slide-box>
@@ -26,8 +26,8 @@
               <div ng-repeat="training in myTraining">
                 <a href="javascript:;" class="item anitem" ng-click="GoToMessaging(training)">
                   <p class="training-title">{{training.title}}</p>
-                  <i class="ion-ios-clock-outline">{{training.time}}</i>
-                  <i class="ion-calendar">{{training.period}}</i>
+        <i class="ion-ios-clock-outline"></i><span style="margin-left:4px;margin-right:11px;">{{training.time}}</span>
+        <i class="ion-calendar"></i><span style="margin-left:4px;">{{training.period}}</span>
                 </a>
               </div>
             </div>
@@ -38,8 +38,8 @@
               <div ng-repeat="training in trainings">
                 <a href="javascript:;" class="item anitem" ng-click="showConfirm(training);">
                   <p class="training-title">{{training.title}}</p>
-                  <i class="ion-ios-clock-outline">{{training.time}}</i>
-                  <i class="ion-calendar">{{training.period}}</i>
+                  <i class="ion-ios-clock-outline"></i><span style="margin-left:4px;margin-right:11px;">{{training.time}}</span>
+                  <i class="ion-calendar"></i><span style="margin-left:4px;">{{training.period}}</span>
                 </a>
               </div>
             </div>

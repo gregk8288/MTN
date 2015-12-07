@@ -13,32 +13,32 @@ angular.module('app.routes', [])
     .state('login', {
       url: '/email',
       templateUrl: 'templates/login.html',
-      controller: 'loginCtrl'
+      controller: 'LoginCtrl'
     })
 
     .state('signin', {
       url: '/signin',
       templateUrl: 'templates/signin.html',
-      controller: 'signinCtrl'
+      controller: 'SigninCtrl'
     })
 
     .state('profile', {
       url: '/profile',
       templateUrl: 'templates/profile.html',
-      controller: 'profileCtrl'
+      controller: 'ProfileCtrl'
     })
 
 
-    .state('mTNAcadamy', {
+    .state('home', {
       url: '/home',
-      templateUrl: 'templates/mTNAcadamy.html',
-      controller: 'mTNAcadamyCtrl'
+      templateUrl: 'templates/home.html',
+      controller: 'HomeCtrl'
     })
 
     .state('training', {
       url: '/training',
       templateUrl: 'templates/training.html',
-      controller: 'trainingCtrl'
+      controller: 'TrainingCtrl'
     })
 
 

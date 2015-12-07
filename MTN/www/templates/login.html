@@ -18,12 +18,9 @@
           <span class="valid" ng-show="userForm.email.$valid && !userForm.email.$pristine"><i class="ion-checkmark"></i></span>
         </label>
 
-        <button class="button button-energized button-outline button-block " ng-click="email(user);">CONTINUE</button>
+        <button class="button button-energized button-outline button-block " ng-click="email(user.email);">CONTINUE</button>
 
       </form>
     </div>
   </ion-content>
-  <div class="bar-clear bar bar-footer">
-    <button class="button button-energized button-clear button-block ">SKIP</button>
-  </div>
 </ion-view>

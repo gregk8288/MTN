@@ -9183,9 +9183,7 @@ body, .ionic-body {
   margin-top: 20px; }
 
 .bar.bar-header.barheader {
-  background-color: #2C3A51;
-  border-bottom: none;
-  color: white; }
+  background-color: #2C3A51; }
 
 .no-padding {
   padding: 0px !important; }
@@ -9303,7 +9301,7 @@ body, .ionic-body {
   color: white; }
 
 .bar.bar-header > .avatar img {
-  position: relative;
+  position: absolute;
   z-index: 500; }
 
 .bar.bar-header > .dropdown i {

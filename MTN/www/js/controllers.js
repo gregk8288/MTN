@@ -1,13 +1,13 @@
 angular.module('app.controllers', ['pouchdb'])
 
-  .controller('loginCtrl', function ($scope, $state, $rootScope, pouchCollection) {
+  .controller('LoginCtrl', function ($scope, $state, $rootScope, pouchCollection) {
     var dbName = 'users';
     $scope.tasks = pouchCollection(dbName);
 
     $scope.email = function (user) {
-      $rootScope.email = user.email;
+      $rootScope.email = user;
 
-      $scope.goTosignin();
+      $scope.goTosignin(user);
     };
 
   
@@ -19,14 +19,15 @@ angular.module('app.controllers', ['pouchdb'])
         });
    
 
-    $scope.goTosignin = function () {
+    $scope.goTosignin = function (user) {
       $state.go('signin');
     }
 
   })
 
-  .controller('profileCtrl', function ($scope, $state, $rootScope, pouchCollection) {
-
+  .controller('ProfileCtrl', function ($scope, $state, $rootScope, pouchCollection) {
+      //var userEmail = $rootScope.email;
+      //$scope.user = "test@test.com";
     var db = new PouchDB('users');
     db.allDocs({
       include_docs: true,
@@ -44,7 +45,7 @@ angular.module('app.controllers', ['pouchdb'])
           $rootScope.initials = $rootScope.user.firstname.charAt(0) + $rootScope.user.lastname.charAt(0);
           $scope.$apply();
           return
-        }
+        } 
 
       }
 
@@ -53,7 +54,7 @@ angular.module('app.controllers', ['pouchdb'])
     });
 
 
-    $scope.goToMtnAcademy = function (user) {
+    $scope.goHome = function (user) {
       console.log(user);
       var dbName = 'users';
       $scope.tasks = pouchCollection(dbName);
@@ -66,18 +67,18 @@ angular.module('app.controllers', ['pouchdb'])
             console.log(err);
           });
      
-      $state.go('mTNAcadamy');
+      $state.go('home');
     }
 
   })
 
-  .controller('signinCtrl', function ($scope, $state) {
+  .controller('SigninCtrl', function ($scope, $state) {
     $scope.goToProfile = function () {
       $state.go('profile');
     }
   })
 
-  .controller('mTNAcadamyCtrl', function ($scope, $ionicPopover, $state, $ionicPopup, Training, pouchCollection, $rootScope) {
+  .controller('HomeCtrl', function ($scope, $ionicPopover, $state, $ionicPopup, Training, pouchCollection, $rootScope) {
 
     $scope.goBack = function () {
       $state.go('profile');
@@ -111,7 +112,14 @@ angular.module('app.controllers', ['pouchdb'])
       $state.go('training');
       $rootScope.selectedTraining = training;
     }
+  
     $scope.showConfirm = function (training) {
+        var currentPlatform = ionic.Platform.platform();
+        console.log(currentPlatform);
+        var isIOS = ionic.Platform.isIOS();
+          var isAndroid = ionic.Platform.isAndroid();
+          if (isIOS == true || isAndroid ==true) {
+        $ionicPlatform.ready(function() {
         navigator.notification.confirm("By adding this training to your profile you will receive any notification / updates sent to this group.", function(buttonIndex) {
                     switch(buttonIndex) {
                         case 1:
@@ -133,8 +141,19 @@ angular.module('app.controllers', ['pouchdb'])
                     }
                 }, "add " + $rootScope.selectedTraining.title + "?", [ "Dismiss", "Accept" ]);
       
-      
+       });
+      } else {
+          training.user_id = $rootScope.user._id;
+          var dbName = 'trainingrrrelected';
+          $scope.tasks = pouchCollection(dbName);
+          $scope.tasks.$add(training);
 
+            $scope.sync = $scope.tasks.$db.replicate.sync('https://couchdb-c29371.smileupps.com/' + dbName, {live: true})
+              .on('error', function (err) {
+                console.log("Syncing stopped");
+                console.log(err);
+              });
+      } 
 
     };
  
@@ -152,13 +171,13 @@ angular.module('app.controllers', ['pouchdb'])
     
 
   })
-  .controller('trainingCtrl', function ($scope, $state, $ionicPopover, $ionicScrollDelegate, $timeout, $rootScope, pouchCollection) {
+  .controller('TrainingCtrl', function ($scope, $state, $ionicPopover, $ionicScrollDelegate, $timeout, $rootScope, pouchCollection) {
     console.log($rootScope.selectedTraining);
     $scope.title = $rootScope.selectedTraining.title;
     $scope.chat = {};
 
     $scope.goBackt = function () {
-      $state.go('mTNAcadamy');
+      $state.go('home');
     }
 
 

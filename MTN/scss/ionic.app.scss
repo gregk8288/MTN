@@ -403,6 +403,11 @@ a.item.chat-message{
 .chat-bubble.left {
   background-color: #e6e5eb;
   float: left;
+  >p{
+    color: #000;
+    font-weight: 500;
+    text-align: left;
+  }
 }
 
 .chat-bubble.left:before {
@@ -413,8 +418,13 @@ a.item.chat-message{
 
 .chat-bubble.right {
   background-color:$yellowbg;
-  color: #fff;
   float: right;
+  right:-50px;
+  >p{
+    color: #fff;
+    font-weight: 500;
+    text-align: left;
+  }
 }
 
 .chat-bubble.right:before {

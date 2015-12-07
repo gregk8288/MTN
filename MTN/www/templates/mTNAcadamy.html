@@ -6,7 +6,7 @@
       <i class="ion-ios-arrow-down"></i>
     </a>
   </ion-nav-bar>
-  <ion-content class="bg bg-darkblue" scroll="false">
+  <ion-content class="bg bg-darkblue bg-listsize" scroll="false">
     <div class="container-fluid form-container">
       <tab-slide-box>
 
@@ -33,7 +33,7 @@
             </div>
           </ion-slide>
           <ion-slide class="tabbed-slider-content">
-            <ion-content style="height:900px;">
+            
             <div class="list mtnAcademy-list">
               <div ng-repeat="training in trainings">
                 <a href="#" class="item anitem" ng-click="showConfirm(training);">
@@ -43,7 +43,7 @@
                 </a>
               </div>
             </div>
-            </ion-content>
+        
           </ion-slide>
         </ion-slide-box>
       </tab-slide-box>

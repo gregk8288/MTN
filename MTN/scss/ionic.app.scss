@@ -54,6 +54,10 @@ body, .ionic-body {
   background-color: white;
   &.bg-darkblue {
     background-image: url('../img/bg.png');
+   
+  }
+  &.bg-listsize {
+       background-size:100% 10%;
   }
 }
 

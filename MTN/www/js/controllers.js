@@ -93,7 +93,7 @@ angular.module('app.controllers', ['pouchdb'])
   };
   
   $scope.getMyTrainingData = function() {
-  var db = new PouchDB('trainingselected');
+  var db = new PouchDB('trainingxxxelected');
   db.allDocs({
     include_docs: true,
     attachments: true
@@ -108,6 +108,7 @@ angular.module('app.controllers', ['pouchdb'])
           
       }
       $scope.myTraining = events;
+      
 
   }).catch(function (err) {
     console.log(err);
@@ -122,7 +123,7 @@ angular.module('app.controllers', ['pouchdb'])
       
       console.log("added:" + $rootScope.user._id);
       training.user_id = $rootScope.user._id;
-      var dbName = 'trainingselected';
+      var dbName = 'trainingxxxelected';
       $scope.tasks = pouchCollection(dbName);
       $scope.tasks.$add(training);
       $scope.online = !$scope.online;
@@ -152,19 +153,11 @@ angular.module('app.controllers', ['pouchdb'])
               allevents.push(result.rows[i].doc); 
           }
           $scope.trainings = allevents;
+          console.log( $scope.trainings);
           
       });
 
-  var promise = Training.getAllTrainings();
-  promise.then(function (data) {
-    $scope.trainings = [];
-    var item;
-
-    for(var i = 0; i<data.length;i++){
-      item = data[i];
-      $scope.trainings.push(item);
-    }
-  });
+  
 
 
 })
@@ -181,10 +174,8 @@ angular.module('app.controllers', ['pouchdb'])
     var viewScroll = $ionicScrollDelegate.$getByHandle('userMessageScroll');
     
     $scope.$on('$ionicView.enter', function() {
-        // var dbName = 'messages';
- //        $scope.tasks = pouchCollection(dbName);
- //        $scope.tasks.$add({"username":"Other", "userId":"3232323","trainingId":"184E4198-92C4-2678-9508-7A97B32A6D08","pic":"http://ionicframework.com/img/docs/mcfly.jpg","text": "this is the dummy2 test" });
-   var db = new PouchDB('messages');
+  
+   var db = new PouchDB('testlastmessages');
         db.allDocs({
           include_docs: true,
           attachments: true
@@ -207,14 +198,8 @@ angular.module('app.controllers', ['pouchdb'])
     });
 
     $scope.sendMessage = function(chatMessage) {
-
-      $scope.input = chatMessage;
-
-      localStorage.setItem('senderMessage', JSON.stringify($scope.input));
-
-      $scope.input.senderMessage = JSON.parse(localStorage.getItem('senderMessage'));
-
-
+        console.log(chatMessage);
+       $scope.input.chat.message = '';
 
       var message = {};
 
@@ -226,7 +211,7 @@ angular.module('app.controllers', ['pouchdb'])
       message.datetime = Date.now();
       $scope.messages.push(message);
 
-      var dbName = 'messages';
+      var dbName = 'testlastmessages';
       $scope.tasks = pouchCollection(dbName);
       $scope.tasks.$add(message);
       $scope.online = !$scope.online;

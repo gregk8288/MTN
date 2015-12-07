@@ -6,7 +6,7 @@
       <i class="ion-ios-arrow-down"></i>
     </a>
   </ion-nav-bar>
-  <ion-content class="bg bg-darkblue" scroll="false">
+  <ion-content class="bg bg-darkblue bg-listsize" scroll="false">
     <div class="container-fluid form-container" style="height: 100%;">
       <tab-slide-box>
         <div class="tsb-icons padding-left padding-right">
@@ -19,13 +19,13 @@
         </div>
         <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
           <ion-slide class="tabbed-slider-content" on-swipe-left="getContent();">
-            <ion-content delegate-handle="userMessageScroll" class="chat-scroll-content">
+            
+<ion-content delegate-handle="userMessageScroll" class="chat-scroll-content">
               <div class="list mtnAcademy-list main-content" style="height:100%">
                 <div class="list list-container" ng-repeat="message in messages | orderBy: datetime">
 
                   <a href="#" class="item item-avatar chat-message" ng-if="user._id !== message.userId">
                     <img src="http://images.layar.com/images/threedtest/icon_high.png?1393237933.0" alt="Tangent"/>
-
                     <div class="chat-bubble left">
                       <p class="training-title">{{message.username}}</p>
                       <p class="usermessage">{{message.text}}</p>
@@ -39,17 +39,17 @@
                 </div>
 
               </div>
-
-              <form name="sendMessageForm">
-                <div class="list">
-                  <div class="item item-input-inset input-inset">
-                    <label class="item-input-wrapper">
-                      <input type="text" placeholder="Message" ng-model="chat.message">
-                    </label>
-                    <a class="button send-btn" type="submit" ng-click="sendMessage(chat.message)">Send</a>
-                  </div>
+            </ion-content>
+            <form name="sendMessageForm" class="form-bottom">
+              <div class="list">
+                <div class="item item-input-inset input-inset">
+                  <label class="item-input-wrapper">
+                    <input type="text" placeholder="Message" ng-model="chat.message">
+                  </label>
+                  <a class="button send-btn" type="submit" ng-click="sendMessage(chat.message)">Send</a>
                 </div>
-              </form>
+              </div>
+            </form>
 
           </ion-slide>
           <ion-slide class="tabbed-slider-content">

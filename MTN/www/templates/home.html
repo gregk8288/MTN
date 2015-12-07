@@ -1,8 +1,9 @@
 <ion-view view-title="MTN Acadamy" ng-init="getMyTrainingData()">
   <ion-nav-bar class="bar bar-header bar-light barheader">
-   <span class="avatar"><img src="img/oval.png" alt="oval" width="35" height="35"/></span>
+   <span class="avatar"><img src="img/oval.png" alt="oval" width="35" height="35"/>{{initials | uppercase}}</span>
    <a href="#" class="dropdown">
-     <span class="avatar-text" ng-click="goBackt()">{{initials | uppercase}}</span>
+     <span class="avatar-text" style="padding-left:18px;" ng-click="goBack()">{{initials | uppercase}}</span> -->
+     <!-- <img src="img/oval.png" alt="oval" width="35" height="35"/> -->
      <i class="ion-ios-arrow-down"></i>
    </a>
  </ion-nav-bar>

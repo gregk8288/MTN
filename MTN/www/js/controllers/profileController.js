@@ -7,7 +7,6 @@ angular.module('app')
         $ionicLoading.show({ template: 'Loading...' });
 
         userService.addUser(user).then(function(result) {
-          console.log(result);
           $state.go('home');
           $ionicLoading.hide();
         });

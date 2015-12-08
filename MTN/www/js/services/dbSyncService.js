@@ -1,5 +1,5 @@
 angular.module('app.services')
-  .service('dbSyncService', function(dbFactory, $q) {
+  .service('dbSyncService', function(dbFactory) {
     var db = dbFactory.db;
 
     this.startSync = function() {

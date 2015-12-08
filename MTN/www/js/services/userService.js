@@ -37,8 +37,9 @@ angular.module('app.services')
           if(doc.type === DOCUMENT_TYPE && doc._id === userId) {
             if(doc.trainings) {
               for(var i in doc.trainings){
-              var trainingId = doc.trainings[i];
-              emit(trainingId,{_id:trainingId});}
+                var trainingId = doc.trainings[i];
+                emit(trainingId,{_id: trainingId });
+              }
             }
           }
         }

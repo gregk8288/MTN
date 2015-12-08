@@ -1,7 +1,6 @@
 angular.module('app')
-    .controller('ProfileCtrl',['pouchdb', function ($scope, $state, $rootScope, pouchCollection) {
-        //var userEmail = $rootScope.email;
-        $scope.user = "test@test.com";
+    .controller('ProfileCtrl', function ($scope, $state, $rootScope, pouchCollection) {
+       
       var db = new PouchDB('users');
       db.allDocs({
         include_docs: true,

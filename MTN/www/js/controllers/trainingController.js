@@ -1,4 +1,4 @@
-angular.module('app')
+angular.module('app.controllers')
 
   .controller('TrainingCtrl', function ($scope, $state, $ionicPopover, $ionicScrollDelegate, $timeout, $rootScope, pouchCollection) {
     //console.log($rootScope.selectedTraining);

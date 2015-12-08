@@ -1,4 +1,4 @@
-angular.module('app')
+angular.module('app.controllers')
 
   .controller('HomeCtrl', function ($scope, $ionicPopover, $state, $ionicPopup, Training, pouchCollection, $rootScope) {
 

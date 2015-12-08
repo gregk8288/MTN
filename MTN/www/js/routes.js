@@ -17,13 +17,13 @@ angular.module('app.routes', [])
     })
 
     .state('signin', {
-      url: '/signin',
+      url: '/signin/:email',
       templateUrl: 'templates/signin.html',
       controller: 'SigninCtrl'
     })
 
     .state('profile', {
-      url: '/profile',
+      url: '/profile/:firstname/:lastname/:email/:pic',
       templateUrl: 'templates/profile.html',
       controller: 'ProfileCtrl'
     })

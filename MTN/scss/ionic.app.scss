@@ -442,7 +442,15 @@ a.item.chat-message{
 .message-description {
     font-weight:400;
 }
-
+.platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) > * {
+    margin-top:10px;
+}
+.platform-ios.platform-cordova:not(.fullscreen) .dropdown {
+    margin-top:22px !important;
+} 
+.platform-ios.platform-cordova:not(.fullscreen) .avatar {
+    margin-top:20px !important;
+} 
 
 
 

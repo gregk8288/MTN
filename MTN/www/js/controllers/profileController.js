@@ -1,6 +1,6 @@
-angular.module('app')
-    .controller('ProfileCtrl', function ($scope, $state, $rootScope, pouchCollection) {
-       
+angular.module('app.controllers')
+    .controller('ProfileCtrl', function ($scope, $state, $rootScope, pouchCollection, $stateParams) {
+      
       var db = new PouchDB('users');
       db.allDocs({
         include_docs: true,
@@ -11,14 +11,19 @@ angular.module('app')
         for (var i = 0; i < result.rows.length; i++) {
     
           //console.log(result.rows[i].doc.email);
-          if ($rootScope.email == result.rows[i].doc.email) {
+          if ($stateParams.email == result.rows[i].doc.email) {
     
             $scope.user = result.rows[i].doc;
             $rootScope.user = result.rows[i].doc;
             $rootScope.initials = $rootScope.user.firstname.charAt(0) + $rootScope.user.lastname.charAt(0);
             $scope.$apply();
             return
-          } 
+          } else {
+              console.log("user not found");
+              console.log($stateParams);
+              $scope.user = $stateParams; 
+              $rootScope.initials = $scope.user.firstname.charAt(0) + $scope.user.lastname.charAt(0);
+          }
     
         }
     

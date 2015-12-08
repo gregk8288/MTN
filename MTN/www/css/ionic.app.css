@@ -9420,3 +9420,6 @@ a.item.chat-message {
   right: 0px;
   transform: rotate(50deg);
   margin-top: -4px; }
+
+.message-description {
+  font-weight: 400; }

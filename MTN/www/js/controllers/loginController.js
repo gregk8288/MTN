@@ -1,9 +1,13 @@
 angular.module('app')
 
-    .controller('LoginCtrl', function ($scope, $state, $rootScope, pouchCollection, userService) {
+    .controller('LoginCtrl', function ($scope, $state, $rootScope, pouchCollection, userService, dbSyncService) {
       userService.getUserByEmail('eruaan@gmail.com').then(function(result) {
         console.log(result);
       });
+
+
+
+
       // var db = new PouchDB('hellocrowd');
       // db.query({
       //   map: function(doc, emit) {

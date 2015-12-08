@@ -1,4 +1,4 @@
-angular.module('pouchdb')
+angular.module('app')
 
   .factory('pouchCollection', ['$timeout', 'pouchdb', function($timeout, pouchdb) {
 

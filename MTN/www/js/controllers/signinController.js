@@ -1,4 +1,4 @@
-angular.module('app.controllers', ['pouchdb'])
+angular.module('app')
 
     .controller('SigninCtrl', function ($scope, $state) {
       $scope.goToProfile = function () {

@@ -1,6 +1,6 @@
-angular.module('app.controllers', ['pouchdb'])
+angular.module('app.controllers')
 
-  .controller('HomeCtrl', function ($scope, $ionicPopover, $state, $ionicPopup, Training, pouchCollection, $rootScope) {
+  .controller('HomeCtrl', ['pouchdb', function ($scope, $ionicPopover, $state, $ionicPopup, Training, pouchCollection, $rootScope) {
 
     $scope.goBack = function () {
       $state.go('profile');
@@ -92,4 +92,4 @@ angular.module('app.controllers', ['pouchdb'])
      });
     
 
-  })
+  }]);

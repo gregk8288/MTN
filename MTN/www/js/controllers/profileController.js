@@ -1,5 +1,5 @@
-angular.module('app.controllers', ['pouchdb'])
-    .controller('ProfileCtrl', function ($scope, $state, $rootScope, pouchCollection) {
+angular.module('app')
+    .controller('ProfileCtrl',['pouchdb', function ($scope, $state, $rootScope, pouchCollection) {
         //var userEmail = $rootScope.email;
         $scope.user = "test@test.com";
       var db = new PouchDB('users');
@@ -44,5 +44,5 @@ angular.module('app.controllers', ['pouchdb'])
         $state.go('home');
       }
 
-    })
+    }]);
       

@@ -40,8 +40,6 @@ angular.module('app.services')
       training.messages = training.messages || [];
       training.messages.push(message);
 
-      console.log(training);
-
       return this.addTraining(training);
     };
   });

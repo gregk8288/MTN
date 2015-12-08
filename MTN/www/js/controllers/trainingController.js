@@ -1,7 +1,7 @@
 angular.module('app')
 
-  .controller('TrainingCtrl', ['pouchdb',function ($scope, $state, $ionicPopover, $ionicScrollDelegate, $timeout, $rootScope, pouchCollection) {
-    console.log($rootScope.selectedTraining);
+  .controller('TrainingCtrl', function ($scope, $state, $ionicPopover, $ionicScrollDelegate, $timeout, $rootScope, pouchCollection) {
+    //console.log($rootScope.selectedTraining);
     $scope.title = $rootScope.selectedTraining.title;
     $scope.chat = {};
 
@@ -67,5 +67,5 @@ angular.module('app')
 
 
     };
-  }]);
+  });
 

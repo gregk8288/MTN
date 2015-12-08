@@ -1,47 +1,15 @@
 angular.module('app')
-    .controller('ProfileCtrl', function ($scope, $state, $rootScope, pouchCollection) {
-       
-      var db = new PouchDB('users');
-      db.allDocs({
-        include_docs: true,
-        attachments: true
-      }).then(function (result) {
-        // handle result
-    
-        for (var i = 0; i < result.rows.length; i++) {
-    
-          //console.log(result.rows[i].doc.email);
-          if ($rootScope.email == result.rows[i].doc.email) {
-    
-            $scope.user = result.rows[i].doc;
-            $rootScope.user = result.rows[i].doc;
-            $rootScope.initials = $rootScope.user.firstname.charAt(0) + $rootScope.user.lastname.charAt(0);
-            $scope.$apply();
-            return
-          } 
-    
-        }
-    
-      }).catch(function (err) {
-          
-        console.log(err);
-      });
-      
+    .controller('ProfileCtrl', function ($scope, $state, $rootScope, userService, $ionicLoading) {
+
+      $scope.user = $rootScope.user;
+
       $scope.goHome = function (user) {
-        console.log(user);
-        var dbName = 'users';
-        $scope.tasks = pouchCollection(dbName);
+        $ionicLoading.show({ template: 'Loading...' });
 
-        $scope.tasks.$add(user);
-      
-          $scope.sync = $scope.tasks.$db.replicate.sync('http://localhost:5984/' + dbName, {live: true})
-            .on('error', function (err) {
-              console.log("Syncing stopped");
-              console.log(err);
-            });
-     
-        $state.go('home');
+        userService.addUser(user).then(function(result) {
+          console.log(result);
+          $state.go('home');
+          $ionicLoading.hide();
+        });
       }
-
     });
-      

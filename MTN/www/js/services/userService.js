@@ -22,6 +22,14 @@ angular.module('app.services')
         }
       });
     };
+
+    this.addUser = function(doc) {
+      doc.type = 'user';
+      return db.post(angular.copy(doc)).then(function(res) {
+        doc._rev = res.rev;
+        doc._id = res.id;
+      });
+    };
   });
 
 

@@ -8,7 +8,7 @@
 
 angular.module('app', ['ionic', 'app.routes', 'app.services', 'app.directives', 'tabSlideBox', 'ngCordova', 'pouchdb'])
 
-.run(function($ionicPlatform, dbSyncService) {
+.run(function($ionicPlatform, $rootScope, dbSyncService) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -21,6 +21,7 @@ angular.module('app', ['ionic', 'app.routes', 'app.services', 'app.directives', 
     }
 
     dbSyncService.startSync();
+    $rootScope.user = {};
   });
 
 })

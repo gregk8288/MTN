@@ -57,7 +57,7 @@ angular.module('app')
       $scope.tasks.$add(message);
       $scope.online = !$scope.online;
      
-        $scope.sync = $scope.tasks.$db.replicate.sync('https://couchdb-c29371.smileupps.com/' + dbName, {live: true})
+        $scope.sync = $scope.tasks.$db.replicate.sync('http://localhost:5984/' + dbName, {live: true})
           .on('error', function (err) {
             console.log("Syncing stopped");
             console.log(err);

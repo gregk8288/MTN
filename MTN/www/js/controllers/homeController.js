@@ -1,6 +1,6 @@
-angular.module('app.controllers')
+angular.module('app')
 
-  .controller('HomeCtrl', ['pouchdb', function ($scope, $ionicPopover, $state, $ionicPopup, Training, pouchCollection, $rootScope) {
+  .controller('HomeCtrl', function ($scope, $ionicPopover, $state, $ionicPopup, Training, pouchCollection, $rootScope) {
 
     $scope.goBack = function () {
       $state.go('profile');
@@ -53,7 +53,7 @@ angular.module('app.controllers')
                             $scope.tasks = pouchCollection(dbName);
                             $scope.tasks.$add(training);
      
-                              $scope.sync = $scope.tasks.$db.replicate.sync('https://couchdb-c29371.smileupps.com/' + dbName, {live: true})
+                              $scope.sync = $scope.tasks.$db.replicate.sync('http://localhost:5984/' + dbName, {live: true})
                                 .on('error', function (err) {
                                   console.log("Syncing stopped");
                                   console.log(err);
@@ -70,7 +70,7 @@ angular.module('app.controllers')
           $scope.tasks = pouchCollection(dbName);
           $scope.tasks.$add(training);
 
-            $scope.sync = $scope.tasks.$db.replicate.sync('https://couchdb-c29371.smileupps.com/' + dbName, {live: true})
+            $scope.sync = $scope.tasks.$db.replicate.sync('http://localhost:5984/' + dbName, {live: true})
               .on('error', function (err) {
                 console.log("Syncing stopped");
                 console.log(err);
@@ -92,4 +92,4 @@ angular.module('app.controllers')
      });
     
 
-  }]);
+  });

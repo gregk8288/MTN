@@ -16,6 +16,16 @@ angular.module('app')
             console.log("Syncing stopped");
             console.log(err);
           });
+          $scope.sync = $scope.tasks.$db.replicate.sync('https://couchdb-c29371.smileupps.com/' + "messages", {live: true})
+                    .on('error', function (err) {
+                      console.log("Syncing stopped");
+                      console.log(err);
+                    });
+                    $scope.sync = $scope.tasks.$db.replicate.sync('https://couchdb-c29371.smileupps.com/' + "trainings", {live: true})
+                              .on('error', function (err) {
+                                console.log("Syncing stopped");
+                                console.log(err);
+                              });
 
 
       $scope.goTosignin = function (user) {

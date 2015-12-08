@@ -6,7 +6,7 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 
-angular.module('app', ['ionic', 'app.routes', 'app.services', 'app.directives', 'tabSlideBox','ngCordova','pouchdb'])
+angular.module('app', ['ionic', 'app.routes', 'app.services', 'app.directives', 'tabSlideBox', 'ngCordova', 'pouchdb'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

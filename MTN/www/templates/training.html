@@ -25,7 +25,7 @@
                   <a href="javascript:;" class="item item-avatar chat-message" ng-if="user._id !== message.userid">
                     <img src="http://images.layar.com/images/threedtest/icon_high.png?1393237933.0" alt="Tangent"/>
                     <div class="chat-bubble left">
-                      <p class="training-title">{{message.username}}</p>
+                      <p class="training-title chat-name">{{message.username}}</p>
                       <p class="usermessage">{{message.text}}</p>
                     </div>
                   </a>
@@ -44,7 +44,7 @@
               <div class="list" keyboard-attach>
                 <div class="item item-input-inset input-inset">
                   <label class="item-input-wrapper">
-                    <input type="text" class="searchField" ng-click="mytest()" keyboard-attach placeholder="Message" ng-model="chat.message">
+                    <input type="text" class="searchField" ng-click="messagesRearrange()" keyboard-attach placeholder="Message" ng-model="chat.message">
                   </label>
                   <a class="button send-btn" type="submit" ng-click="sendMessage(chat.message)">Send</a>
                 </div>

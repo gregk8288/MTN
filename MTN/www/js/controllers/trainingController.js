@@ -1,7 +1,7 @@
 angular.module('app')
   .controller('TrainingCtrl', function ($scope, $state, $ionicPopover, $ionicScrollDelegate, $timeout, trainingService, $rootScope, pouchCollection, $location,$anchorScroll, $ionicScrollDelegate) {
     var selectedTraining = $rootScope.selectedTraining;
-    $scope.mytest = function () {
+    $scope.messagesRearrange = function () {
         
         var instances = $ionicScrollDelegate.$getByHandle("userMessageScroll")._instances;
 
@@ -10,7 +10,7 @@ angular.module('app')
         var instances = $ionicScrollDelegate.$getByHandle("userMessageScroll")._instances;
 
         instances[instances.length-1].scrollBottom();
-         }, 500);
+         }, 300);
     }
     $scope.title = $rootScope.selectedTraining.title;
     $scope.chat = {};

@@ -46,6 +46,7 @@ angular.module('app')
     }
     
     $scope.getpopup = function(training){
+        
               if (ionic.Platform.isIOS() == true || ionic.Platform.isAndroid() ==true) {
                   var message = "By adding this training to your profile you will receive any notification / updates sent to this group.";
                     navigator.notification.confirm(message, function(buttonIndex) {
@@ -57,9 +58,19 @@ angular.module('app')
                             break;
                     }
                 },
-                 "add " + $rootScope.selectedTraining.title + "?", [ "Dismiss", "Accept" ]);
+                 "add " + training.title + "?", [ "Dismiss", "Accept" ]);
              } else {
-                 $scope.addTraining(training);
+                 var confirmPopup = $ionicPopup.confirm({
+                   title:  "add " + training.title + "?",
+                   template: 'By adding this training to your profile you will receive any notification / updates sent to this group.'
+                 });
+                 confirmPopup.then(function(res) {
+                   if(res) {
+                     $scope.addTraining(training);
+                   } else {
+              
+                   }
+                 });
              }
         
     }

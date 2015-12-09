@@ -30,7 +30,11 @@ $trainingOrange: #FABA26;
 body, .ionic-body {
   font-family: "Roboto","Helvetica Neue", "Segoe UI", sans-serif;
 }
-
+.button.button-positive {
+    border-color: $yellowbg;
+    background-color: $yellowbg;
+    color: #fff;
+}
 
 
 [nav-view-transition="ios"][nav-view-direction="back"] .bar .bar-header.barheader {

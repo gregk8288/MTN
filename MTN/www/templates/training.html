@@ -29,13 +29,13 @@
                   <a href="javascript:;" class="item item-avatar chat-message" ng-if="user._id !== message.userid">
                     <img src="http://images.layar.com/images/threedtest/icon_high.png?1393237933.0" alt="Tangent"/>
                     <div class="chat-bubble left">
-                      <p class="training-title">{{message.username}} | {{message.datetime}}</p>
+                      <p class="training-title">{{message.username}}</p>
                       <p class="usermessage">{{message.text}}</p>
                     </div>
                   </a>
                   <a href="javascript:;" class="item item-avatar-right chat-message" ng-if="user._id === message.userid">
                       <div class="chat-bubble right">
-                        <p class="text-right usermessage">{{message.text}} {{message.datetime}}</p>
+                        <p class="text-right usermessage">{{message.text}}</p>
                       </div>
                   </a>
                 </div>

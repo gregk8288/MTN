@@ -9093,6 +9093,11 @@ a.button {
 body, .ionic-body {
   font-family: "Roboto","Helvetica Neue", "Segoe UI", sans-serif; }
 
+.button.button-positive {
+  border-color: #FFCC00;
+  background-color: #FFCC00;
+  color: #fff; }
+
 [nav-view-transition="ios"][nav-view-direction="back"] .bar .bar-header.barheader {
   background-color: #2C3A51 !important; }
 

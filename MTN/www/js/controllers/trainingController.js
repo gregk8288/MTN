@@ -18,13 +18,13 @@ angular.module('app')
            datetime: row.value.message.datetime
         };
       });
-      $ionicScrollDelegate.$getByHandle('userMessageScroll').scrollBottom([true]);
+      $ionicScrollDelegate.$getByHandle('userMessageScroll').scrollBottom([false]);
     });
 
     $scope.goBackToTraining = function () {
       $state.go('home');
     }
-    $ionicScrollDelegate.$getByHandle('userMessageScroll').scrollBottom([true]);
+    $ionicScrollDelegate.$getByHandle('userMessageScroll').scrollBottom([false]);
     $scope.sendMessage = function (chatMessage) {
 
       var message = {

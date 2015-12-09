@@ -5,12 +5,13 @@
    <a href="#" class="dropdown">
      <span  ng-hide="hasImage" class="avatar-text" style="padding-left:18px;" ng-click="goBack()">{{initials | uppercase}}</span> -->
      <!-- <img src="img/oval.png" alt="oval" width="35" height="35"/> -->
-     <i class="ion-ios-arrow-down"></i>
+      <i ng-show="hasImage" style="margin-left:25px;" class="ion-ios-arrow-down"></i>
+     <i ng-hide="hasImage" class="ion-ios-arrow-down"></i>
    </a>
  </ion-nav-bar>
   <ion-content class="bg bg-darkblue bg-listsize" scroll="false">
     <div class="container-fluid form-container">
-      <tab-slide-box>
+      <tab-slide-box tab>
 
         <div class="tsb-icons padding-left padding-right">
           <div class="tsb-ic-wrp">

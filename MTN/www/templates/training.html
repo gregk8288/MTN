@@ -4,13 +4,13 @@
     <span ng-show="hasImage" class="avatar"><img ng-src="{{image}}" ng-click="goBackToTraining()" style="background-repeat: no-repeat;background-position: 50%;border-radius: 50%;" alt="oval" width="35" height="35"/></span>
     <a href="#" class="dropdown">
       <span ng-hide="hasImage" class="avatar-text" style="padding-left:18px;" ng-click="goBackToTraining()">{{initials | uppercase}}</span>
-       
-      <i class="ion-ios-arrow-down"></i>
+      <i ng-show="hasImage" style="margin-left:25px;" class="ion-ios-arrow-down"></i>
+     <i ng-hide="hasImage" class="ion-ios-arrow-down"></i>
     </a>
   </ion-nav-bar>
   <ion-content class="bg bg-darkblue bg-listsize" scroll="false">
     <div class="container-fluid form-container" style="height: 100%;">
-      <tab-slide-box>
+      <tab-slide-box tab>
         <div class="tsb-icons padding-left padding-right">
           <div class="tsb-ic-wrp">
             <div class="button-bar">
@@ -58,7 +58,7 @@
           </ion-slide>
           <ion-slide class="tabbed-slider-content">
             <div class="list mtnAcademy-list">
-              <a class="item item-avatar-right input-field" href="#" ng-click="loginWithFB"/>
+              <a class="item item-avatar-right input-field" ng-click="loginWithFB"/>
               <img src="http://findicons.com/files/icons/1072/face_avatars/300/d05.png" class="text-left"/>
 
               <h2 class="margin-top10">{{message.username}}</h2>
@@ -67,7 +67,7 @@
 
               </a>
 
-              <a class="item item-avatar-right list-no-borderLR" href="#" ng-click="loginWithLI"/>
+              <a class="item item-avatar-right list-no-borderLR" ng-click="loginWithLI"/>
               <img src="https://cdn0.iconfinder.com/data/icons/iconshock_guys/512/matthew.png" class="text-left"/>
 
               <h2 class="margin-top10">Ruaan Erasmus</h2>
@@ -76,7 +76,7 @@
 
               </a>
 
-              <a class="item item-avatar-right list-no-borderLR" href="#" ng-click="loginWithTw"/>
+              <a class="item item-avatar-right list-no-borderLR"  ng-click="loginWithTw"/>
               <img
                 src="https://media.licdn.com/mpr/mpr/shrink_100_100/AAEAAQAAAAAAAAMQAAAAJDk4MWZkMzFlLWQ1ZTMtNDc1Ny04NmE2LTMwODA2NDM2ZDNiZg.png"
                 class="text-left"/>

@@ -23,6 +23,7 @@ angular.module('app.routes', [])
     })
 
     .state('profile', {
+      //url: '/profile/:firstname/:lastname/:email/:pic',
       url: '/profile',
       templateUrl: 'templates/profile.html',
       controller: 'ProfileCtrl'

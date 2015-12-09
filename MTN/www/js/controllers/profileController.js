@@ -2,9 +2,6 @@ angular.module('app')
     .controller('ProfileCtrl', function ($scope, $state, $stateParams, $rootScope, userService, $ionicLoading) {
       $scope.user = $rootScope.user;
       
-     
-    
-      
       $scope.setImage = function() {
           if ($scope.user.pic != null){
               $scope.hasImage = true;
@@ -27,6 +24,8 @@ angular.module('app')
           }     
       }
       if (Object.keys($scope.user).length == 0){
+          $rootScope.hasImage = false;
+          $scope.hasImage = false;
           $scope.user.email = $rootScope.email;
       }
       

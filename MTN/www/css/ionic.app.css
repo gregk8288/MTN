@@ -9437,3 +9437,6 @@ a.item.chat-message {
   background-repeat: no-repeat;
   background-position: 50%;
   border-radius: 50%; }
+
+.bar {
+  border-bottom: 0px solid #ddd !important; }

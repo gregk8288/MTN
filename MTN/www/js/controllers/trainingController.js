@@ -24,7 +24,17 @@ angular.module('app')
     $scope.goBackToTraining = function () {
       $state.go('home');
     }
-    $ionicScrollDelegate.$getByHandle('userMessageScroll').scrollBottom([true]);
+    window.addEventListener('native.keyboardshow', keyboardShowHandler);
+    // cordova.plugins.Keyboard.disableScroll(true);
+     function keyboardShowHandler(e){
+  //      // alert('Keyboard height is: ' + e.keyboardHeight);
+      $ionicScrollDelegate.$getByHandle('userMessageScroll').scrollBottom([true]);
+     }
+     window.addEventListener('native.keyboardhide', keyboardHideHandler);
+
+     function keyboardHideHandler(e){
+         $ionicScrollDelegate.$getByHandle('userMessageScroll').scrollBottom([true]);
+     }
     $scope.sendMessage = function (chatMessage) {
 
       var message = {
@@ -35,7 +45,13 @@ angular.module('app')
 
       trainingService.addUserMessage(selectedTraining, message);
       $scope.messages.push(message);
-      $ionicScrollDelegate.$getByHandle('userMessageScroll').scrollBottom([true]);
+       $ionicScrollDelegate.$getByHandle('userMessageScroll').scrollBottom([true]);
+       var instances = $ionicScrollDelegate.$getByHandle("userMessageScroll")._instances;
+
+       instances[instances.length-1].scrollTop(); // take the last instance for scrolling
+       var instances = $ionicScrollDelegate.$getByHandle("userMessageScroll")._instances;
+
+       instances[instances.length-1].scrollBottom();
       $scope.chat.message = "";
       
     };

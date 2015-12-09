@@ -45,10 +45,10 @@
             </ion-content>
              
             <form name="sendMessageForm" class="form-bottom">
-              <div class="list">
+              <div class="list" keyboard-attach>
                 <div class="item item-input-inset input-inset">
                   <label class="item-input-wrapper">
-                    <input type="text" placeholder="Message" ng-model="chat.message">
+                    <input type="text" class="searchField" keyboard-attach placeholder="Message" ng-model="chat.message">
                   </label>
                   <a class="button send-btn" type="submit" ng-click="sendMessage(chat.message)">Send</a>
                 </div>
@@ -76,6 +76,16 @@
 
               </a>
 
+              <a class="item item-avatar-right list-no-borderLR"  ng-click="loginWithTw"/>
+              <img
+                src="https://media.licdn.com/mpr/mpr/shrink_100_100/AAEAAQAAAAAAAAMQAAAAJDk4MWZkMzFlLWQ1ZTMtNDc1Ny04NmE2LTMwODA2NDM2ZDNiZg.png"
+                class="text-left"/>
+
+              <h2 class="margin-top10">Tangent Solutions</h2>
+
+              <p>hello world</p>
+
+              </a>
               <a class="item item-avatar-right list-no-borderLR"  ng-click="loginWithTw"/>
               <img
                 src="https://media.licdn.com/mpr/mpr/shrink_100_100/AAEAAQAAAAAAAAMQAAAAJDk4MWZkMzFlLWQ1ZTMtNDc1Ny04NmE2LTMwODA2NDM2ZDNiZg.png"

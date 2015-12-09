@@ -1,14 +1,13 @@
 angular.module('app')
-  .controller('TrainingCtrl', function ($scope, $state, $ionicPopover, $ionicScrollDelegate, $timeout, trainingService, $rootScope, pouchCollection, $location,$anchorScroll) {
+  .controller('TrainingCtrl', function ($scope, $state, $ionicPopover, $ionicScrollDelegate, $timeout, trainingService, $rootScope, pouchCollection, $location,$anchorScroll, $ionicScrollDelegate) {
     var selectedTraining = $rootScope.selectedTraining;
-
+    
     $scope.title = $rootScope.selectedTraining.title;
     $scope.chat = {};
     $scope.user = $rootScope.user;
     $scope.hasImage = $rootScope.hasImage;
     $scope.image = $rootScope.image;
    
-
     trainingService.getTrainingMessages(selectedTraining._id).then(function(results) {
       $scope.messages = results.rows.map(function(row) {
         return {
@@ -19,12 +18,13 @@ angular.module('app')
            datetime: row.value.message.datetime
         };
       });
+      $ionicScrollDelegate.$getByHandle('userMessageScroll').scrollBottom([true]);
     });
 
     $scope.goBackToTraining = function () {
       $state.go('home');
     }
-
+    $ionicScrollDelegate.$getByHandle('userMessageScroll').scrollBottom([true]);
     $scope.sendMessage = function (chatMessage) {
 
       var message = {
@@ -36,10 +36,7 @@ angular.module('app')
       trainingService.addUserMessage(selectedTraining, message);
       $scope.messages.push(message);
       $scope.chat.message = "";
-     // $location.hash('bottom');
-
-           // call $anchorScroll()
-       //    $anchorScroll();
+      $ionicScrollDelegate.$getByHandle('userMessageScroll').scrollBottom([true]);
     };
     
   });

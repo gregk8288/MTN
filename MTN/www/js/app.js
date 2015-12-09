@@ -25,6 +25,7 @@ angular.module('app', ['ionic', 'app.routes', 'app.services', 'app.directives', 
     
    
   });
+  
   dbSyncService.startSync();
   $rootScope.user = {};
 

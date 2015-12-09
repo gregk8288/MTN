@@ -50,26 +50,26 @@ angular.module('app')
               if (ionic.Platform.isIOS() == true || ionic.Platform.isAndroid() ==true) {
                   var message = "By adding this training to your profile you will receive any notification / updates sent to this group.";
                     navigator.notification.confirm(message, function(buttonIndex) {
-                    switch(buttonIndex) {
+                        switch(buttonIndex) {
                         case 1:
                             break;
                         case 2:
                             $scope.addTraining(training);
                             break;
-                    }
-                },
-                 "add " + training.title + "?", [ "Dismiss", "Accept" ]);
+                        }
+                    },
+                     "add " + training.title + "?", [ "Dismiss", "Accept" ]);
              } else {
                  var confirmPopup = $ionicPopup.confirm({
                    title:  "add " + training.title + "?",
                    template: 'By adding this training to your profile you will receive any notification / updates sent to this group.'
                  });
                  confirmPopup.then(function(res) {
-                   if(res) {
-                     $scope.addTraining(training);
-                   } else {
+                       if(res) {
+                           $scope.addTraining(training);
+                       } else {
               
-                   }
+                       }
                  });
              }
         

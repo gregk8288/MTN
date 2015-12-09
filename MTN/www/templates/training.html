@@ -23,7 +23,7 @@
           <ion-slide class="tabbed-slider-content" on-swipe-left="getContent();">
 
 <ion-content delegate-handle="userMessageScroll" class="chat-scroll-content">
-              <div class="list mtnAcademy-list main-content" style="height:100%">
+              <div class="list mtnAcademy-list main-content message-padding" style="height:100%">
                 <div class="list list-container" ng-repeat="message in messages | orderBy: 'datetime'">
 
                   <a href="javascript:;" class="item item-avatar chat-message" ng-if="user._id !== message.userid">
@@ -39,7 +39,7 @@
                       </div>
                   </a>
                 </div>
-               <div id="bottom"></div>
+              
               </div>
              
             </ion-content>

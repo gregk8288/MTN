@@ -7,9 +7,11 @@
   <ion-content class="bg bg-darkblue" scroll="false">
     <div class="container signin-container padding-20">
       <div class="text-center">
-        <img src="img/oval.png" alt="login-logo" class="login-logo"/>
+
+        <img ng-hide="hasImage" src="img/oval.png" alt="login-logo" class="login-logo"/> 
+        <img ng-show="hasImage" ng-src="{{image}}" style="background-repeat: no-repeat;background-position: 50%;border-radius: 50%;" height="auto" width="180" alt="login-logo" class="login-logo"/>
       </div>
-      <div class="profile-text text-center">
+      <div ng-hide="hasImage" class="profile-text text-center">
         <h2>{{initials | uppercase}}</h2>
       </div>
       <form name="userForm" class="list profile-form">

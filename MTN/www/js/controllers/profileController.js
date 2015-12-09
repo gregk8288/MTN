@@ -1,52 +1,37 @@
-angular.module('app.controllers')
-    .controller('ProfileCtrl', function ($scope, $state, $rootScope, pouchCollection, $stateParams) {
+angular.module('app')
+    .controller('ProfileCtrl', function ($scope, $state, $stateParams, $rootScope, userService, $ionicLoading) {
+      $scope.user = $rootScope.user;
+     
       
-      var db = new PouchDB('users');
-      db.allDocs({
-        include_docs: true,
-        attachments: true
-      }).then(function (result) {
-        // handle result
-    
-        for (var i = 0; i < result.rows.length; i++) {
-    
-          //console.log(result.rows[i].doc.email);
-          if ($stateParams.email == result.rows[i].doc.email) {
-    
-            $scope.user = result.rows[i].doc;
-            $rootScope.user = result.rows[i].doc;
-            $rootScope.initials = $rootScope.user.firstname.charAt(0) + $rootScope.user.lastname.charAt(0);
-            $scope.$apply();
-            return
+      $scope.setImage = function() {
+          if ($scope.user.pic != null){
+              $scope.hasImage = true;
+              $rootScope.image = $scope.image;
+              $rootScope.hasImage = true;
+              $scope.image = $scope.user.pic;
+            
+             
           } else {
-              console.log("user not found");
-              console.log($stateParams);
-              $scope.user = $stateParams; 
+              $rootScope.initials = "";
+              $rootScope.hasImage = false;
+              $scope.hasImage = false;
               $rootScope.initials = $scope.user.firstname.charAt(0) + $scope.user.lastname.charAt(0);
           }
-    
-        }
-    
-      }).catch(function (err) {
-          
-        console.log(err);
-      });
+      }
+      
+      if (Object.keys($rootScope.user).length != 0){
+          if ((Object.keys($rootScope.user.firstname).length != 0 && Object.keys($rootScope.user.lastname).length != 0)) {
+              $scope.setImage();
+          }     
+      }
       
       $scope.goHome = function (user) {
-        console.log(user);
-        var dbName = 'users';
-        $scope.tasks = pouchCollection(dbName);
-
-        $scope.tasks.$add(user);
-      
-          $scope.sync = $scope.tasks.$db.replicate.sync('http://localhost:5984/' + dbName, {live: true})
-            .on('error', function (err) {
-              console.log("Syncing stopped");
-              console.log(err);
-            });
-     
-        $state.go('home');
+        $ionicLoading.show({ template: 'Loading...' });
+        
+          userService.addUser(user).then(function(result) {
+            $scope.setImage();
+            $state.go('home');
+            $ionicLoading.hide();
+          });
       }
-
     });
-      

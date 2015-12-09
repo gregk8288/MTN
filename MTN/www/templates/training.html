@@ -1,9 +1,10 @@
 <ion-view view-title="{{title}}">
    <ion-nav-bar class="bar bar-header bar-light barheader">
-    <span class="avatar"><img src="img/oval.png" alt="oval" width="35" height="35"/>{{initials | uppercase}}</span>
+    <span ng-hide="hasImage" class="avatar"><img src="img/oval.png" alt="oval" width="35" height="35"/>{{initials | uppercase}}</span>
+    <span ng-show="hasImage" class="avatar"><img ng-src="{{image}}" ng-click="goBackToTraining()" style="background-repeat: no-repeat;background-position: 50%;border-radius: 50%;" alt="oval" width="35" height="35"/></span>
     <a href="#" class="dropdown">
-      <span class="avatar-text" style="padding-left:18px;" ng-click="goBackt()">{{initials | uppercase}}</span> -->
-      <!-- <img src="img/oval.png" alt="oval" width="35" height="35"/> -->
+      <span ng-hide="hasImage" class="avatar-text" style="padding-left:18px;" ng-click="goBackToTraining()">{{initials | uppercase}}</span>
+       
       <i class="ion-ios-arrow-down"></i>
     </a>
   </ion-nav-bar>
@@ -23,24 +24,26 @@
 
 <ion-content delegate-handle="userMessageScroll" class="chat-scroll-content">
               <div class="list mtnAcademy-list main-content" style="height:100%">
-                <div class="list list-container" ng-repeat="message in messages | orderBy: datetime">
+                <div class="list list-container" ng-repeat="message in messages | orderBy: 'datetime'">
 
-                  <a href="javascript:;" class="item item-avatar chat-message" ng-if="user._id !== message.userId">
+                  <a href="javascript:;" class="item item-avatar chat-message" ng-if="user._id !== message.userid">
                     <img src="http://images.layar.com/images/threedtest/icon_high.png?1393237933.0" alt="Tangent"/>
                     <div class="chat-bubble left">
-                      <p class="training-title">{{message.username}}</p>
+                      <p class="training-title">{{message.username}} | {{message.datetime}}</p>
                       <p class="usermessage">{{message.text}}</p>
                     </div>
                   </a>
-                  <a href="javascript:;" class="item item-avatar-right chat-message" ng-if="user._id === message.userId">
+                  <a href="javascript:;" class="item item-avatar-right chat-message" ng-if="user._id === message.userid">
                       <div class="chat-bubble right">
-                        <p class="text-right usermessage">{{message.text}}</p>
+                        <p class="text-right usermessage">{{message.text}} {{message.datetime}}</p>
                       </div>
                   </a>
                 </div>
-
+               
               </div>
+             
             </ion-content>
+             
             <form name="sendMessageForm" class="form-bottom">
               <div class="list">
                 <div class="item item-input-inset input-inset">

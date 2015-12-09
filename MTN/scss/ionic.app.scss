@@ -452,6 +452,11 @@ a.item.chat-message{
     margin-top:20px !important;
 } 
 
-
+.circle {
+    background-repeat: no-repeat;background-position: 50%;border-radius: 50%;
+}
+.bar {
+    border-bottom: 0px solid #ddd !important;
+}
 
 

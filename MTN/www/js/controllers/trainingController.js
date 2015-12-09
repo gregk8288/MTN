@@ -36,10 +36,10 @@ angular.module('app')
       trainingService.addUserMessage(selectedTraining, message);
       $scope.messages.push(message);
       $scope.chat.message = "";
-      $location.hash('bottom');
+     // $location.hash('bottom');
 
            // call $anchorScroll()
-           $anchorScroll();
+       //    $anchorScroll();
     };
     
   });

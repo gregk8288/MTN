@@ -10,6 +10,7 @@ angular.module('app')
 
     $scope.getMyTrainingData = function () {
       userService.getUsersTrainings(user._id).then(function(result) {
+          
         $scope.myTraining = result.rows.map(function(row) {
           return row.doc;
         });
@@ -19,7 +20,10 @@ angular.module('app')
     var getTrainings = (function () {
       $ionicLoading.show({ template: 'Loading...' });
       trainingService.getTrainings().then(function(docs) {
+          console.log("all data");
+          console.log(docs);
         $scope.trainings= docs.rows.map(function(doc) {
+           
           return doc.value;
         });
         $ionicLoading.hide();

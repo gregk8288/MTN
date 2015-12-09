@@ -1,5 +1,6 @@
 angular.module('app')
-  .controller('LoginCtrl', function ($scope, $state, $rootScope, $ionicLoading, userService) {
+  .controller('LoginCtrl', function ($scope, $state, $rootScope, $ionicLoading, userService, dbSyncService) {
+
     $scope.email = function (email) {
       $ionicLoading.show({ template: 'Loading...' });
       $rootScope.email = "";

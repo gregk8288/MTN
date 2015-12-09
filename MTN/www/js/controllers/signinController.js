@@ -1,6 +1,10 @@
 angular.module('app')
     .controller('SigninCtrl', function ($scope, $state,$stateParams,$rootScope, azureClient, $ionicHistory) {
-       $ionicHistory.clearHistory();
+       
+       $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
+           $ionicHistory.clearHistory();
+           viewData.enableBack = false;
+         });
         $scope.user = {};
         $scope.registerFacebook = function(){
         	azureClient.login("facebook").done(function (results) {

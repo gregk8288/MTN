@@ -4,7 +4,7 @@ angular.module('app')
       $ionicLoading.show({ template: 'Loading...' });
       $rootScope.email = "";
       userService.getUserByEmail(email).then(function(result) {
-          console.log(result.rows.length);
+          
         if(result.rows.length > 0) {
             if (email == result.rows[0].value.email){
                  $rootScope.user = result.rows[0].value;

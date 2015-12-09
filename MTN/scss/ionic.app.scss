@@ -464,6 +464,13 @@ a.item.chat-message{
 }
 
 .message-padding {
-    margin-bottom:25px !important;
-    padding-bottom:25px !important;
+    margin-bottom:25px;
+    padding-bottom:25px;
+}
+.keyboardHeightShow {
+    height:266px !important;
+     padding-bottom:25px;
+}
+.keyboardHeightoff {
+    height:1px !important;
 }

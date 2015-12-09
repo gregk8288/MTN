@@ -1,13 +1,9 @@
 <ion-view view-title="{{title}}">
-   <ion-nav-bar class="bar bar-header bar-light barheader">
-    <span ng-hide="hasImage" class="avatar"><img src="img/oval.png" alt="oval" width="35" height="35"/>{{initials | uppercase}}</span>
-    <span ng-show="hasImage" class="avatar"><img ng-src="{{image}}" ng-click="goBackToTraining()" style="background-repeat: no-repeat;background-position: 50%;border-radius: 50%;" alt="oval" width="35" height="35"/></span>
-    <a href="#" class="dropdown">
-      <span ng-hide="hasImage" class="avatar-text" style="padding-left:18px;" ng-click="goBackToTraining()">{{initials | uppercase}}</span>
-      <i ng-show="hasImage" style="margin-left:25px;" class="ion-ios-arrow-down"></i>
-     <i ng-hide="hasImage" class="ion-ios-arrow-down"></i>
-    </a>
-  </ion-nav-bar>
+    <ion-nav-bar class="bar bar-header bar-light barheader">
+     <ion-nav-back-button style="display:block;" class="button-clear">
+       <i class="ion-ios-arrow-back"></i> Back
+     </ion-nav-back-button>
+   </ion-nav-bar>
   <ion-content class="bg bg-darkblue bg-listsize" scroll="false">
     <div class="container-fluid form-container" style="height: 100%;">
       <tab-slide-box tab>
@@ -22,8 +18,8 @@
         <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
           <ion-slide class="tabbed-slider-content" on-swipe-left="getContent();">
 
-<ion-content delegate-handle="userMessageScroll" class="chat-scroll-content">
-              <div class="list mtnAcademy-list main-content message-padding" style="height:100%">
+<ion-content delegate-handle="userMessageScroll" keyboard-attach scroll="true" padding="false">
+              <div class="list mtnAcademy-list main-content message-padding">
                 <div class="list list-container" ng-repeat="message in messages | orderBy: 'datetime'">
 
                   <a href="javascript:;" class="item item-avatar chat-message" ng-if="user._id !== message.userid">
@@ -39,7 +35,7 @@
                       </div>
                   </a>
                 </div>
-              
+              <div ng-class="keyboardHeight"></div>
               </div>
              
             </ion-content>
@@ -48,7 +44,7 @@
               <div class="list" keyboard-attach>
                 <div class="item item-input-inset input-inset">
                   <label class="item-input-wrapper">
-                    <input type="text" class="searchField" keyboard-attach placeholder="Message" ng-model="chat.message">
+                    <input type="text" class="searchField" ng-click="mytest()" keyboard-attach placeholder="Message" ng-model="chat.message">
                   </label>
                   <a class="button send-btn" type="submit" ng-click="sendMessage(chat.message)">Send</a>
                 </div>
@@ -61,7 +57,7 @@
               <a class="item item-avatar-right input-field" ng-click="loginWithFB"/>
               <img src="http://findicons.com/files/icons/1072/face_avatars/300/d05.png" class="text-left"/>
 
-              <h2 class="margin-top10">{{message.username}}</h2>
+              <h2>Tyrone Avnit</h2>
 
               <p>hello world</p>
 
@@ -70,7 +66,7 @@
               <a class="item item-avatar-right list-no-borderLR" ng-click="loginWithLI"/>
               <img src="https://cdn0.iconfinder.com/data/icons/iconshock_guys/512/matthew.png" class="text-left"/>
 
-              <h2 class="margin-top10">Ruaan Erasmus</h2>
+              <h2>Ruaan Erasmus</h2>
 
               <p>hello world</p>
 
@@ -81,19 +77,19 @@
                 src="https://media.licdn.com/mpr/mpr/shrink_100_100/AAEAAQAAAAAAAAMQAAAAJDk4MWZkMzFlLWQ1ZTMtNDc1Ny04NmE2LTMwODA2NDM2ZDNiZg.png"
                 class="text-left"/>
 
-              <h2 class="margin-top10">Tangent Solutions</h2>
+              <h2>Tangent Solutions</h2>
 
               <p>hello world</p>
 
               </a>
               <a class="item item-avatar-right list-no-borderLR"  ng-click="loginWithTw"/>
               <img
-                src="https://media.licdn.com/mpr/mpr/shrink_100_100/AAEAAQAAAAAAAAMQAAAAJDk4MWZkMzFlLWQ1ZTMtNDc1Ny04NmE2LTMwODA2NDM2ZDNiZg.png"
+                src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-frc3/v/t1.0-1/c30.30.372.372/1013694_10152908322860313_1045628433_n.jpg?oh=2931930e0d2211c31de4ed8cbe5dc93e&oe=571A931F&__gda__=1456906388_2e4f61dd47a6f93494144623d981ea4d"
                 class="text-left"/>
 
-              <h2 class="margin-top10">Tangent Solutions</h2>
+              <h2>Greg Kockott</h2>
 
-              <p>hello world</p>
+              <p>CEO at Hellocrowd</p>
 
               </a>
             </div>

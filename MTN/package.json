@@ -19,7 +19,8 @@
       "locator": "https://github.com/apache/cordova-plugin-whitelist.git",
       "id": "cordova-plugin-whitelist"
     },
-    "org.apache.cordova.splashscreen"
+    "org.apache.cordova.splashscreen",
+    "ionic-plugin-keyboard"
   ],
   "cordovaPlatforms": [
     "android",

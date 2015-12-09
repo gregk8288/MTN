@@ -11,6 +11,7 @@ angular.module('app')
 
         		azureClient.invokeApi('userInfo', { method : 'GET' })
         			.done(function (profile) {
+                        console.log(profile);
                         $scope.user.firstname = profile.result.facebook.name.substr(0,profile.result.facebook.name.indexOf(' '));
                         $scope.user.lastname = profile.result.facebook.name.substr(profile.result.facebook.name.indexOf(' ')+1);
                         $scope.user.pic = profile.result.facebook.picture.data.url;
@@ -31,7 +32,7 @@ angular.module('app')
          	azureClient.login("twitter").done(function (results) {
          		azureClient.invokeApi('userInfo', { method : 'GET' })
          			.done(function (profile) {
-                        
+                        console.log(profile);
          		         // $scope.user.socialmediaID = results.userId;
                          var str = profile.result.twitter.name;
                           $scope.user.firstname = str.substr(0,str.indexOf(' '));

@@ -18,13 +18,13 @@ angular.module('app')
            datetime: row.value.message.datetime
         };
       });
-      $ionicScrollDelegate.$getByHandle('userMessageScroll').scrollBottom([false]);
+      $ionicScrollDelegate.$getByHandle('userMessageScroll').scrollBottom([true]);
     });
 
     $scope.goBackToTraining = function () {
       $state.go('home');
     }
-    $ionicScrollDelegate.$getByHandle('userMessageScroll').scrollBottom([false]);
+    $ionicScrollDelegate.$getByHandle('userMessageScroll').scrollBottom([true]);
     $scope.sendMessage = function (chatMessage) {
 
       var message = {
@@ -35,8 +35,9 @@ angular.module('app')
 
       trainingService.addUserMessage(selectedTraining, message);
       $scope.messages.push(message);
-      $scope.chat.message = "";
       $ionicScrollDelegate.$getByHandle('userMessageScroll').scrollBottom([true]);
+      $scope.chat.message = "";
+      
     };
     
   });

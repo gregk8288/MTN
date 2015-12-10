@@ -9369,9 +9369,6 @@ a.item.chat-message {
 .chat-scroll-content {
   bottom: 55px !important; }
 
-.button-bar {
-  margin-bottom: 10px; }
-
 .mtnAcademy-list .list {
   margin: 0; }
 
@@ -9459,6 +9456,9 @@ a.item.chat-message {
 
 .item-avatar-right {
   min-height: 0; }
+
+.item-avatar {
+  padding-left: 55px !important; }
 
 .item-avatar-right > img:first-child {
   top: 12px;

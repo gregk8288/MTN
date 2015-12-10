@@ -375,11 +375,9 @@ a.item.chat-message{
   margin-bottom: 6px;
 }
 .chat-scroll-content {
- bottom: 55px !important; }
-
-.button-bar {
-  margin-bottom: 10px;
+ bottom: 55px !important;
 }
+
 .mtnAcademy-list .list {
   margin: 0;
 }
@@ -479,6 +477,10 @@ a.item.chat-message{
 
 .item-avatar-right {
   min-height:0;
+}
+
+.item-avatar {
+  padding-left:55px!important;
 }
 
 .item-avatar-right > img:first-child {

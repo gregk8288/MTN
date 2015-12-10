@@ -1,17 +1,8 @@
 angular.module('app')
   .controller('TrainingCtrl', function ($scope, $state, $ionicPopover, $ionicScrollDelegate, $timeout, trainingService, $rootScope, pouchCollection, $location,$anchorScroll, $ionicScrollDelegate) {
     var selectedTraining = $rootScope.selectedTraining;
-    $scope.messagesRearrange = function () {
-        
-        var instances = $ionicScrollDelegate.$getByHandle("userMessageScroll")._instances;
-
-        instances[instances.length-1].scrollTop(); // take the last instance for scrolling
-         $timeout(function() {
-        var instances = $ionicScrollDelegate.$getByHandle("userMessageScroll")._instances;
-
-        instances[instances.length-1].scrollBottom();
-         }, 300);
-    }
+    
+    
     $scope.title = $rootScope.selectedTraining.title;
     $scope.chat = {};
     $scope.user = $rootScope.user;
@@ -19,9 +10,10 @@ angular.module('app')
     $scope.image = $rootScope.image;
    
     trainingService.getTrainingMessages(selectedTraining._id).then(function(results) {
+       
       $scope.messages = results.rows.map(function(row) {
         return {
-           username: row.doc.firstname + row.doc.lastname,
+           username: row.doc.firstname + " " + row.doc.lastname,
            userid: row.doc._id,
            pic: row.doc.picture,
            text: row.value.message.text,
@@ -29,10 +21,20 @@ angular.module('app')
         };
       });
       $ionicScrollDelegate.$getByHandle('userMessageScroll').scrollBottom([true]);
+     
     });
     
     $scope.goBackToTraining = function () {
       $state.go('home');
+    }
+    
+    $scope.messagesRearrange = function () {
+        var instances = $ionicScrollDelegate.$getByHandle("userMessageScroll")._instances;
+        instances[instances.length-1].scrollTop(); // take the last instance for scrolling
+         $timeout(function() {
+        var instances = $ionicScrollDelegate.$getByHandle("userMessageScroll")._instances;
+        instances[instances.length-1].scrollBottom();
+         }, 300);
     }
  
     $scope.sendMessage = function (chatMessage) {

@@ -30,3 +30,7 @@ angular.module('app', ['ionic', 'app.routes', 'app.services', 'app.directives', 
   $rootScope.user = {};
 
 })
+.config(function($ionicConfigProvider) {
+  // remove back button text completely
+  $ionicConfigProvider.backButton.previousTitleText(false).text('');
+});

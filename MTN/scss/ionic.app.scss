@@ -24,7 +24,9 @@ $trainingOrange: #FABA26;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,500,100');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,500,300,200,100');
+
+@import url('https://file.myfontastic.com/UV9sKuU2zMT6UqRBMwydXC/icons.css');
 
 
 body, .ionic-body {
@@ -265,18 +267,17 @@ body, .ionic-body {
 
 .tabbed-slidebox .tsb-icons{
 
-  margin-top:-191px;
+  margin-top:-187px;
 }
 
 .form-bottom{
   position: fixed;
   width: 100%;
   bottom: 0vh;
-  margin-bottom: 15px;
 }
 
 .button-bar{
-  margin-bottom:10px;
+  margin-bottom:6px;
 }
 
 .list>.anitem>.trainingss-title{
@@ -292,7 +293,7 @@ body, .ionic-body {
 .bar .title.title-left, .bar.bar-light .title {
   text-align: center;
   color:white;
-  font-weight: bold;
+  font-weight: normal;
 }
 .bar.bar-header>.title-left{
   left:0px !important;
@@ -323,9 +324,9 @@ body, .ionic-body {
   z-index: 900;
   text-transform: uppercase;
   line-height:3;
-  margin-left: -27px;
+  margin-left: -28px;
   margin-top: -4px;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 //// TRAINING /////
@@ -375,13 +376,6 @@ a.item.chat-message{
 }
 .chat-scroll-content {
  bottom: 55px !important; }
-
-.form-bottom {
-  position: fixed;
-  width: 100%;
-  bottom: 0vh;
-  margin-bottom: 15px;
-}
 
 .button-bar {
   margin-bottom: 10px;
@@ -474,8 +468,15 @@ a.item.chat-message{
 }
 
 .message-padding {
-    margin-bottom:25px !important;
-    padding-bottom:25px !important;
+    margin-bottom:25px;
+    padding-bottom:25px;
+}
+.keyboardHeightShow {
+    height:266px !important;
+     padding-bottom:25px;
+}
+.keyboardHeightoff {
+    height:1px !important;
 }
 
 .chat-name {
@@ -484,7 +485,14 @@ a.item.chat-message{
 }
 
 .item-avatar-right {
-  min-height: 42px;
+  min-height:0;
+}
+
+.item-avatar-right > img:first-child {
+  top: 12px;
+  right: 10px;
+  max-width: 30px;
+  max-height: 30px;
 }
 
 .item-avatar > img:first-child {
@@ -513,4 +521,43 @@ a.item.chat-message{
 
 .mtnAcademy-list {
     padding-top: 3px;
+}
+
+.budicon {
+  font-size: 26px;
+  color: #FFFFFF;
+}
+
+.green-check {
+  font-size: 16px;
+  color: #4cd964;
+}
+
+h2 {
+  font-weight: 300;
+}
+
+.item {
+  padding: 10px;
+}
+
+.small-avatar {
+  background-color: $yellowbg;
+  width: 30px;
+  height: 30px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+
+.item-input-inset .item-input-wrapper input {
+  width:100%;
+}
+
+.mtnAcademy-list h2 {
+  font-size: 14px;
+}
+
+.mtnAcademy-list p {
+  font-size: 11px;
 }

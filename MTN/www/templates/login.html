@@ -3,19 +3,19 @@
     <div class="container login-container padding-20">
       <div class="text-center">
         <div class="login-logo icon-circle">
-          <img src="img/icon-mail.png" alt="login-logo" class=""/>
+          <i class="budicon budicon-budicon-add-email"></i>
         </div>
       </div>
       <div class="row text-center">
-        <p class="message-description text-center"> Please enter your email address and we'll find events that you have been invited
-          to.</p>
+        <p class="message-description text-center"> Please enter your email address and we'll find training that you have been invited
+          to</p>
       </div>
       <form name="userForm" class="list">
 
         <label class="item item-input item-floating-label custom-label" ng-class="{ 'has-error' : userForm.email.$valid && !userForm.email.$pristine }">
           <span class="input-label input-label-text text-left">EMAIL ADDRESS</span>
           <input type="email" name="email" placeholder="EMAIL ADDRESS" ng-model="user.email"/>
-          <span class="valid" ng-show="userForm.email.$valid && !userForm.email.$pristine"><i class="ion-checkmark"></i></span>
+          <span class="valid" ng-show="userForm.email.$valid && !userForm.email.$pristine"><i class="green-check budicon-budicon-check"></i></span>
         </label>
 
         <button class="button button-energized button-outline button-block " ng-click="email(user.email);">CONTINUE</button>

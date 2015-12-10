@@ -23,11 +23,15 @@
                 <div class="list list-container" ng-repeat="message in messages | orderBy: 'datetime'">
 
                   <a href="javascript:;" class="item item-avatar chat-message" ng-if="user._id !== message.userid">
-                    <img src="http://images.layar.com/images/threedtest/icon_high.png?1393237933.0" alt="Tangent"/>
+                     
+                     <!-- <img ng-if="message.pic" ng-src="{{message.pic}}" /> -->
+                      <!-- <img ng-if="message.pic" class="avatar" ng-hide="hasImage" src="img/oval.png" alt="oval"/> -->
+                    <img src="http://images.layar.com/images/threedtest/icon_high.png?1393237933.0" alt="Tangent"/> 
                     <div class="chat-bubble left">
                       <p class="training-title chat-name">{{message.username}}</p>
                       <p class="usermessage">{{message.text}}</p>
                     </div>
+                    
                   </a>
                   <a href="javascript:;" class="item item-avatar-right chat-message" ng-if="user._id === message.userid">
                       <div class="chat-bubble right">
@@ -35,7 +39,7 @@
                       </div>
                   </a>
                 </div>
-              <div ng-class="keyboardHeight"></div>
+              <div style="height:35px"></div>
               </div>
              
             </ion-content>

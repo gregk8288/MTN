@@ -9473,7 +9473,7 @@ a.item.chat-message {
   max-height: 30px; }
 
 .item-input-inset {
-  padding: 0px 10px 2px; }
+  padding: 0px 10px 0px !important; }
 
 .socialmedia {
   padding-top: 10px;

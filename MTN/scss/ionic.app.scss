@@ -61,7 +61,7 @@ body, .ionic-body {
 
   }
   &.bg-listsize {
-       background-size:100% 12%;
+    background-size: 100% 50px;
   }
 }
 
@@ -265,7 +265,7 @@ body, .ionic-body {
 
 .tabbed-slidebox .tsb-icons{
 
-  margin-top:-171px;
+  margin-top:-191px;
 }
 
 .form-bottom{
@@ -501,9 +501,16 @@ a.item.chat-message{
 .socialmedia {
   padding-top:10px;
   min-height: 52px!important;
-
 }
 .bar .title {
   font-size: 15px;
   font-weight: normal;
+}
+
+.margin-top7 {
+  margin-top: 7px !important;
+}
+
+.mtnAcademy-list {
+    padding-top: 3px;
 }

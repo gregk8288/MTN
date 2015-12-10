@@ -9117,7 +9117,7 @@ body, .ionic-body {
   .bg.bg-darkblue {
     background-image: url("../img/bg.png"); }
   .bg.bg-listsize {
-    background-size: 100% 12%; }
+    background-size: 100% 50px; }
 
 .login-container {
   position: relative;
@@ -9273,7 +9273,7 @@ body, .ionic-body {
   font-size: 12px; }
 
 .tabbed-slidebox .tsb-icons {
-  margin-top: -171px; }
+  margin-top: -191px; }
 
 .form-bottom {
   position: fixed;
@@ -9482,3 +9482,9 @@ a.item.chat-message {
 .bar .title {
   font-size: 15px;
   font-weight: normal; }
+
+.margin-top7 {
+  margin-top: 7px !important; }
+
+.mtnAcademy-list {
+  padding-top: 3px; }

@@ -1,7 +1,7 @@
 <ion-view view-title="MTN Acadamy" ng-init="getMyTrainingData()">
   <ion-nav-bar class="bar bar-header bar-light barheader">
-   <div ng-hide="hasImage" class="avatar small-avatar"><span>{{initials | uppercase}}</span></div>
-   <span ng-show="hasImage" class="avatar small-avatar"><img ng-src="{{image}}" ng-click="goBack()" style="background-repeat: no-repeat;background-position: 50%;border-radius: 50%;" alt="oval" width="30" height="30"/></span>
+   <div ng-hide="hasImage" class="avatar small-avatar-circle"><span>{{initials | uppercase}}</span></div>
+   <span ng-show="hasImage" class="avatar"><img ng-src="{{image}}" ng-click="goBack()" style="background-repeat: no-repeat;background-position: 50%;border-radius: 50%;" alt="oval" width="30" height="30"/></span>
    <a href="#" class="dropdown">
      <span  ng-hide="hasImage" class="avatar-text" style="padding-left:18px;" ng-click="goBack()">{{initials | uppercase}}</span> -->
      <!-- <img src="img/oval.png" alt="oval" width="35" height="35"/> -->
